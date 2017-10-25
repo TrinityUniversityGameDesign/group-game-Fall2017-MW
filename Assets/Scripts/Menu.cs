@@ -6,11 +6,6 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
 
-    private Timer StartingTime;
-    private DropOff StartWinOff;
-
-
-    public Text highscoreText;
     public string GameStart;
    
 
@@ -19,15 +14,10 @@ public class Menu : MonoBehaviour {
 
      void Start()
     {
-        highscoreText.text = "Most Recent Time: " + PlayerPrefs.GetString("Most Recent Time");
+
     }
 	public void StartGame () {
-        SceneManager.LoadScene(GameStart);
-        StartingTime.StartTime = 0f;
-        StartWinOff.win = false;
-
-        StartingTime.StartTime = Time.time;
-        
+        SceneManager.LoadScene(1);    
 	}
 	
 	// Update is called once per frame
