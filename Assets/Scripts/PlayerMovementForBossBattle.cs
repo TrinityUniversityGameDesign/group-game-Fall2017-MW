@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovementForBossBattle : MonoBehaviour {
 	public float speed = 5f; 
 	private Rigidbody2D theRigidBody; 
 
@@ -15,9 +15,12 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float inputX = Input.GetAxis ("Horizontal");
-
 		theRigidBody.velocity = new Vector2 (inputX * speed, theRigidBody.velocity.y);
 
-		
+		if (Input.GetKey (KeyCode.Space)) {
+			theRigidBody.AddForce(Vector2.up * 50);
+		}
+
+	
 	}
 }
