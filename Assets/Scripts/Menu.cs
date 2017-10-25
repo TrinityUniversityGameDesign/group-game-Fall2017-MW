@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
 
-    public string GameStart;
+   // public string GameStart;
    
 
 
@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour {
 
     }
 	public void StartGame () {
-        SceneManager.LoadScene(1);    
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 	
 	// Update is called once per frame
