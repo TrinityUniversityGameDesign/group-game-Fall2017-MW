@@ -8,12 +8,13 @@ public class mallet_time : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetMouseButtonDown(0))
-        {
-            transform.position.y - 20;
-        }
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        //       if (Input.GetMouseButtonDown(0)) { }
+
+        //        transform.position.;
+        //      }
+    }
 }

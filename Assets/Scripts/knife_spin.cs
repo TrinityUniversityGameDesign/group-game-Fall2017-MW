@@ -5,7 +5,7 @@ using UnityEngine;
 public class knife_spin : MonoBehaviour
 {
     //above 500 works best 
-    public float z;
+    public float z = 700;
     // Use this for initialization
     void Start()
     {
