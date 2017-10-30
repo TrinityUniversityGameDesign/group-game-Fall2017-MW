@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212812123207720308}
   - component: {fileID: 114429080108008344}
   m_Layer: 0
-  m_Name: Player
+  m_Name: BasicConveyorPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
