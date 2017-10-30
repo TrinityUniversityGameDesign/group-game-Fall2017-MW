@@ -6,19 +6,17 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
 
-    // public string GameStart;
-
-    public string startgame;
-
-	// Use this for initialization
-
-     void Start()
+    void Update()
     {
-
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
+    
 	public void StartGame () {
         print("Start Pushed");
-        SceneManager.LoadScene(startgame);// (SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 	
 	// Update is called once per frame

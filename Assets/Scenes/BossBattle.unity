@@ -252,6 +252,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13028806, y: 10.048149}
   m_EdgeRadius: 0
+--- !u!1 &882747797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 882747798}
+  m_Layer: 0
+  m_Name: GameControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882747798
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882747797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.34671617, y: -0.4693488, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226142722
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,8 +290,8 @@ GameObject:
   - component: {fileID: 1226142724}
   - component: {fileID: 1226142723}
   - component: {fileID: 1226142725}
-  - component: {fileID: 1226142727}
   - component: {fileID: 1226142726}
+  - component: {fileID: 1226142727}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -379,7 +407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226142722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacfb92dc78bb46a797ed5c5f70ee060, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0b66e78ac0b4b198c6d7251c785139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
