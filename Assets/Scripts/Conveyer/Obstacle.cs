@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-    public bool isActive = false;
+    private bool isActive = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,19 @@ public class Obstacle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isActive)
+		if(isActive)    //isActive is true after boss drops obstacle -> Will be changed in Alex's Boss Player Script
         {
-
+            // effect of conveyor belt -> method from alex
         }
 	}
+
+    public void setActive()
+    {
+        isActive = true;
+    }
+
+    public bool getActive()
+    {
+        return isActive;
+    }
 }
