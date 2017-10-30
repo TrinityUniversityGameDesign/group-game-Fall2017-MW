@@ -15,8 +15,9 @@ public static class GlobalControl {
 
     public static void AddPlayer(int controllerNumber)
     {
-        players[NumPlayers] = controllerNumber;
         NumPlayers += 1;
+        players[NumPlayers] = controllerNumber;
+        Debug.Log("Controller " + controllerNumber + " joined as player " + NumPlayers);
     }
 
 
