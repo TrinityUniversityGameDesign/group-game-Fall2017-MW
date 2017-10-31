@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4232293466617840}
   - component: {fileID: 212099554262687652}
   - component: {fileID: 114697548940652306}
+  - component: {fileID: 114401194771173398}
+  - component: {fileID: 50436139124049392}
   m_Layer: 0
   m_Name: knife
   m_TagString: Untagged
@@ -35,12 +37,44 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643478906199118}
   m_LocalRotation: {x: -0.00008726013, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.71, y: -1.1, z: -0}
+  m_LocalPosition: {x: 2.9745014, y: -1.4512742, z: -0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.01, y: 0, z: 0}
+--- !u!50 &50436139124049392
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643478906199118}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &114401194771173398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643478906199118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9933d1021043e4dc2b004dc6ab49d939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -5
 --- !u!114 &114697548940652306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02a318a80aa7794995792963fbf9e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 50
+  z: 1000
 --- !u!212 &212099554262687652
 SpriteRenderer:
   m_ObjectHideFlags: 1
