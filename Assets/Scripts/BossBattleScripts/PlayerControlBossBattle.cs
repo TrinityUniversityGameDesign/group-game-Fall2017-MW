@@ -25,7 +25,7 @@ public class PlayerControlBossBattle : MonoBehaviour {
 		bool jump = GlobalControl.GetButtonDownA(1);
 
 		if (jump) {
-			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 50);
+			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);
 
 		}
 

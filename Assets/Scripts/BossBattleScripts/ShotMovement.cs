@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeMovement : MonoBehaviour {
+public class ShotMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 	private Rigidbody2D theRigidBody;
