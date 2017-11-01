@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4284331478953658}
   - component: {fileID: 212812123207720308}
   - component: {fileID: 114429080108008344}
+  - component: {fileID: 95201231354165034}
   m_Layer: 8
   m_Name: BasicConveyorPlayer
   m_TagString: Untagged
@@ -41,6 +42,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95201231354165034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240991516819456}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c4bb0ea671bfc741bdd3ce6ccab451a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114429080108008344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 91e85635c0f184503b850f3951aa50e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58a8f104b2bf8f645bf394db7e61e8d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
