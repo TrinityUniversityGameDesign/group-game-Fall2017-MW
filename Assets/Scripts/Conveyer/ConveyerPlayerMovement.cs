@@ -26,13 +26,13 @@ public class ConveyerPlayerMovement : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
-            canMove = false;
-            ObstacleTimer(stun);
+            StartCoroutine(ObstacleTimer(stun));
         }
     }
 
     private IEnumerator ObstacleTimer(float seconds)
     {
+        canMove = false;
         yield return new WaitForSeconds(seconds);
         canMove = true;
     }
