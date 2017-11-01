@@ -6,6 +6,7 @@ public class knifeThrow : MonoBehaviour {
     public GameObject knife;
     public float delay = 1.0f;
     private bool readyToShoot = true;
+    public int playerNum = 2;
 
     public int pooledAmt = 5;
     List<GameObject> knives;
@@ -63,18 +64,18 @@ public class knifeThrow : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (GlobalControl.GetButtonDownB(1) && readyToShoot){
+        if (GlobalControl.GetButtonDownB(playerNum) && readyToShoot){
             FireMid();
             readyToShoot = false;
             Invoke("ResetReadyToShoot", delay);
         }
-        if (GlobalControl.GetButtonDownY(1) && readyToShoot)
+        if (GlobalControl.GetButtonDownY(playerNum) && readyToShoot)
         {
             FireHigh();
             readyToShoot = false;
             Invoke("ResetReadyToShoot", delay);
         }
-        if (GlobalControl.GetButtonDownA(1) && readyToShoot)
+        if (GlobalControl.GetButtonDownA(playerNum) && readyToShoot)
         {
             FireLow();
             readyToShoot = false;

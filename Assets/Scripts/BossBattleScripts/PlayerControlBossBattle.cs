@@ -8,6 +8,8 @@ public class PlayerControlBossBattle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GlobalControl.AddPlayer(1);
+        GlobalControl.AddPlayer(2);
 		theRigidBody = GetComponent<Rigidbody2D> ();
 	}
 	

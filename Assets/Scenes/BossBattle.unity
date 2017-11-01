@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 1643478906199118, guid: 1db556fa22ff0ef428d4bf40364ee5d2, type: 2}
   delay: 0.5
+  playerNum: 1
   pooledAmt: 10
 --- !u!1 &1499628258
 GameObject:
@@ -647,4 +648,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knife: {fileID: 1643478906199118, guid: 2d377c4a97cb0c4418f43c6811bb7224, type: 2}
   delay: 2
+  playerNum: 2
   pooledAmt: 3

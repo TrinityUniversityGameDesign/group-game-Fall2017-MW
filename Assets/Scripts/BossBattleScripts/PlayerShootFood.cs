@@ -7,6 +7,7 @@ public class PlayerShootFood : MonoBehaviour {
     public GameObject food;
     public float delay = 1.0f;
     private bool readyToShoot = true;
+    public int playerNum;
 
     public int pooledAmt = 5;
     List<GameObject> foods;
@@ -40,7 +41,7 @@ public class PlayerShootFood : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GlobalControl.GetButtonRT(1) && readyToShoot)
+        if (GlobalControl.GetButtonRT(playerNum) && readyToShoot)
         {
             Fire();
             readyToShoot = false;
