@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a123f9963bf549dcaddd990bef83432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obPreFab: {fileID: 1731030014570130, guid: fcc1ea9bb2d75024498b850cc44b30cf, type: 2}
+  conveyor: {fileID: 0}
+  obPreFab: {fileID: 1607747394174204, guid: de6fd9793630cd14fb7709f755d54b14, type: 2}
   speed: 6
 --- !u!4 &22147241
 Transform:
@@ -209,23 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.1
---- !u!1 &929551175 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1240991516819456, guid: c427cbb51e0e242e2afd4c62dee1c061,
-    type: 2}
-  m_PrefabInternal: {fileID: 1548574826}
---- !u!114 &929551179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929551175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b16b3af77549440e82b3d637fe7be80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conveyor: {fileID: 886759615}
 --- !u!1001 &1548574826
 Prefab:
   m_ObjectHideFlags: 0
@@ -265,6 +249,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114730483377219216, guid: c427cbb51e0e242e2afd4c62dee1c061,
+        type: 2}
+      propertyPath: conveyor
+      value: 
+      objectReference: {fileID: 886759615}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c427cbb51e0e242e2afd4c62dee1c061, type: 2}
   m_IsPrefabParent: 0
