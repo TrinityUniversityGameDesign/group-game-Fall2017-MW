@@ -12,7 +12,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        GlobalControl.AddPlayer(1);
     }
 
     // Update is called once per frame
@@ -24,15 +24,15 @@ public class ConveyerPlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {	
-		Debug.Log ("Collided?");
-		canMove = false;
-		StartCoroutine(ObstacleTimer(stun));
-		canMove = false;
-		StartCoroutine(ObstacleTimer(stun));
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
 			canMove = false;
 			StartCoroutine(ObstacleTimer(stun));
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
+        {
+            Debug.Log("Hits Bottom.");
+            gameObject.SetActive(false);
         }
     }
 
