@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour {
 
     private bool isActive = false;
 
+
 	// Use this for initialization
 	void Start () {
 		

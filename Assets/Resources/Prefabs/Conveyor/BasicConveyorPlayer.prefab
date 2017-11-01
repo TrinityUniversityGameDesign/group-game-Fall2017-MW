@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212812123207720308}
   - component: {fileID: 114429080108008344}
   - component: {fileID: 95201231354165034}
+  - component: {fileID: 114730483377219216}
   m_Layer: 8
   m_Name: BasicConveyorPlayer
   m_TagString: Untagged
@@ -71,6 +72,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!114 &114730483377219216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240991516819456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b16b3af77549440e82b3d637fe7be80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  conveyor: {fileID: 0}
 --- !u!212 &212812123207720308
 SpriteRenderer:
   m_ObjectHideFlags: 1
