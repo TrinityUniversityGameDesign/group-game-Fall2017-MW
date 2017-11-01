@@ -17,15 +17,14 @@ public class mallet_time : MonoBehaviour {
     void Update(){
         float step = speed * Time.deltaTime;
         hammerLoc = target.transform.position;
-                      //  if (Input.GetMouseButtonDown(0) )
-                      //     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(hammerLoc.x, hammerLoc.y, transform.position.z), step);
-                //    }
+
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(hammerLoc.x, transform.position.y, transform.position.z), step);
+
         
-               if (Input.GetMouseButtonDown(0))
+              if (Input.GetMouseButtonDown(0))
                     {
-            
-                   }
+         //   transform.position = V
+                  }
     }
     }
 
