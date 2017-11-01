@@ -6,7 +6,6 @@ public class Obstacle : MonoBehaviour {
 
     private bool isActive = false;
 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -20,8 +19,11 @@ public class Obstacle : MonoBehaviour {
         }
 	}
 
-    public void setActive()
+	public void setActive(ConveyorController c)
     {
+		var con = GetComponent<AffectedByConveyor> ();
+		con.conveyor = c;
+		con.isActive = true;
         isActive = true;
     }
 

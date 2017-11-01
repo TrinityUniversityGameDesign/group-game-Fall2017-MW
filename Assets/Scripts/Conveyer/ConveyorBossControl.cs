@@ -19,6 +19,14 @@ public class ConveyorBossControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentObstacle.transform.position += new Vector3(GlobalControl.GetHorizontal (2)*0.05f*speed,0,0);
+		currentObstacle.transform.position += new Vector3(GlobalControl.GetHorizontal (BossPNum)*0.05f*speed,0,0);
+		//Debug.Log ("Updating " + Input.GetButton ("X_P1"));
+		if(Input.GetButtonDown("X_P1")) {
+			Debug.Log ("Pressed");
+			currentObstacle.GetComponent<Obstacle> ().setActive(conveyor);
+			currentObstacle = Instantiate (obPreFab).GetComponent<Obstacle>();
+			currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
+			currentObstacle.transform.position = new Vector3(0, 7,0);
+		}
 	}
 }
