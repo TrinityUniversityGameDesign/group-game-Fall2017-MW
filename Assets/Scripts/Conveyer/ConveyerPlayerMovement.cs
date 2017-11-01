@@ -23,10 +23,16 @@ public class ConveyerPlayerMovement : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
+    {	
+		Debug.Log ("Collided?");
+		canMove = false;
+		StartCoroutine(ObstacleTimer(stun));
+		canMove = false;
+		StartCoroutine(ObstacleTimer(stun));
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
-            StartCoroutine(ObstacleTimer(stun));
+			canMove = false;
+			StartCoroutine(ObstacleTimer(stun));
         }
     }
 
