@@ -4,13 +4,53 @@ using UnityEngine;
 
 public class PlayerShootFood : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject food;
+    public float delay = 1.0f;
+    private bool readyToShoot = true;
+
+    public int pooledAmt = 5;
+    List<GameObject> foods;
+
+    // Use this for initialization
+    void Start()
+    {
+        foods = new List<GameObject>();
+        for (int i = 0; i < pooledAmt; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(food);
+            obj.SetActive(false);
+            foods.Add(obj);
+        }
+
+    }
+    void Fire()
+    {
+        for (int i = 0; i < foods.Count; i++)
+        {
+            if (!foods[i].activeInHierarchy)
+            {
+                foods[i].transform.position = transform.position;
+                foods[i].SetActive(true);
+                break;
+            }
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GlobalControl.GetButtonRT(1) && readyToShoot)
+        {
+            Fire();
+            readyToShoot = false;
+            Invoke("ResetReadyToShoot", delay);
+        }
+
+    }
+    void ResetReadyToShoot()
+    {
+        readyToShoot = true;
+    }
+
 }
