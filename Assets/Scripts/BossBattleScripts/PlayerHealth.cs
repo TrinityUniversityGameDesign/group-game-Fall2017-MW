@@ -18,11 +18,14 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 
-    void OnCollisionEnter2d(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.name == "knife")
+        if (gameObject)
         {
+            print("hit");
             Playerhealth -= 1;
+            //Destroy(gameObject);
+
             print(Playerhealth);
         }
     }

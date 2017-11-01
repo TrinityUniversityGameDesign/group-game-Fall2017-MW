@@ -21,9 +21,9 @@ public class BossHealth : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2d(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "pizza")
+        if (gameObject)
         {
             Bosshealth -= 1;
             print(Bosshealth);
