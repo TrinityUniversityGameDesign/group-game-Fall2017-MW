@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerJoin : MonoBehaviour {
 
     private bool[] hasJoined = {true, false, false, false, false }; //Corresponds to controller number
     private GameObject[] playerBlocks;
     private GameObject playerBlockPrefab;
+    public Text startText;
 
     // Use this for initialization
     void Start () {
@@ -42,9 +44,13 @@ public class PlayerJoin : MonoBehaviour {
             playerBlocks[GlobalControl.AddPlayer(4)].GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
         }
 
-        if (GlobalControl.GetButtonDownStart(1) && GlobalControl.NumPlayers > 1)
+        if (GlobalControl.NumPlayers > 1)
         {
-            //SceneManager.LoadScene("whatever");
+            startText.text = "Player 1 Press Start to Begin";
+            if(GlobalControl.GetButtonDownStart(1))
+            {
+                SceneManager.LoadScene("HotPotato");
+            }
         }
     }
 }
