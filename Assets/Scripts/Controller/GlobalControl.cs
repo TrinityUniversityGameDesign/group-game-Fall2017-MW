@@ -13,11 +13,12 @@ public static class GlobalControl {
     private static bool[] downRT= {true, false, false, false, false };
     private static int[] players = {-1, 0, 0, 0, 0 };
 
-    public static void AddPlayer(int controllerNumber)
+    public static int AddPlayer(int controllerNumber)
     {
         NumPlayers += 1;
         players[NumPlayers] = controllerNumber;
         Debug.Log("Controller " + controllerNumber + " joined as player " + NumPlayers);
+        return NumPlayers;
     }
 
 
