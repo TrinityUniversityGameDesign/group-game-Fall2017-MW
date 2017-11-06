@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeactivateKnife : MonoBehaviour {
 
+   
     void start() {
         OnEnable();
     }
