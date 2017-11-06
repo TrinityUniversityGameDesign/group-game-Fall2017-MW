@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerControlBossBattle : MonoBehaviour {
 	private Rigidbody2D theRigidBody; 
 	public float speed = 10;
+    public int num;
 
 	// Use this for initialization
 	void Start () {
-        GlobalControl.AddPlayer(1);
-        GlobalControl.AddPlayer(2);
+        
 		theRigidBody = GetComponent<Rigidbody2D> ();
 	}
 	
@@ -17,14 +17,14 @@ public class PlayerControlBossBattle : MonoBehaviour {
 	void Update () {
 
 		//Horizontal movment for the character
-		float inputX = GlobalControl.GetHorizontal(1);
+		float inputX = GlobalControl.GetHorizontal(num);
 		theRigidBody.velocity = new Vector2 (inputX * speed, theRigidBody.velocity.y);
 
 
 
 		//makes a character jump if they press A 
 		//want to make a double jump, you can only jup is you have a jump left. 
-		bool jump = GlobalControl.GetButtonDownA(1);
+		bool jump = GlobalControl.GetButtonDownA(num);
 
 		if (jump) {
 			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61331479031172274}
   - component: {fileID: 114492283243940526}
   m_Layer: 0
-  m_Name: Meat-Mallet_magic
+  m_Name: Meat-Mallet-icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

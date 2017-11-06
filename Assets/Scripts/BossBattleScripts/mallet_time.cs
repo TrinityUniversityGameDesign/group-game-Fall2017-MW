@@ -15,7 +15,7 @@ public class mallet_time : MonoBehaviour {
 
    void Start()
     {
-        target = (GameObject.Find("target")).transform;
+        //target = (GameObject.Find("target")).transform;
         smash = false;
         ogSpot = transform.position;
             }
