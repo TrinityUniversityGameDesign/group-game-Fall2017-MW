@@ -177,7 +177,7 @@ Transform:
   m_LocalScale: {x: 15.44171, y: 1.0845822, z: 1.0845822}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622345755 stripped
 GameObject:
@@ -363,7 +363,7 @@ Transform:
   m_LocalScale: {x: 0.8760405, y: 0.8760405, z: 0.8760405}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1493225806
 Prefab:
@@ -442,7 +442,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 708120816}
+  ground: {fileID: 115098800}
   speed: 5
+  num: 1
+  smash: 0
 --- !u!61 &1570032702
 BoxCollider2D:
   m_ObjectHideFlags: 0
