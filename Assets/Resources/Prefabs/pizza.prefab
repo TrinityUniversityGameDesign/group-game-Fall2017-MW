@@ -23,7 +23,11 @@ GameObject:
   - component: {fileID: 50436139124049392}
   - component: {fileID: 114224967141503122}
   - component: {fileID: 114540768744891316}
+<<<<<<< HEAD
   - component: {fileID: 61072831370075536}
+=======
+  - component: {fileID: 61587107667418324}
+>>>>>>> bb4248d1622bb3a16847ee4d422cd95935e1e8eb
   m_Layer: 0
   m_Name: pizza
   m_TagString: Untagged
@@ -64,7 +68,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 --- !u!61 &61072831370075536
+=======
+--- !u!61 &61587107667418324
+>>>>>>> bb4248d1622bb3a16847ee4d422cd95935e1e8eb
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
