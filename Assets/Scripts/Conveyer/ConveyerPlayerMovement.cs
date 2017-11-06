@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConveyerPlayerMovement : MonoBehaviour
 {
-
+	public int playerNum = 1;
     public float speed = 4;
     private bool canMove = true;
     private float stun = 2.0f;
@@ -19,7 +19,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     void Update()
     {
         if (canMove)
-            transform.position += new Vector3((GlobalControl.GetHorizontal(1) * 0.05f * speed), (GlobalControl.GetVertical(1) * 0.05f * speed), 0);
+			transform.position += new Vector3((GlobalControl.GetHorizontal(playerNum) * 0.05f * speed), (GlobalControl.GetVertical(playerNum) * 0.05f * speed), 0);
     }
 
     void OnTriggerEnter2D(Collider2D other)

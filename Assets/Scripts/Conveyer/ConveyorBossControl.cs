@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ConveyorBossControl : MonoBehaviour {
 	public ConveyorController conveyor;
 	public GameObject[] obPreFabs;
+	public GameObject[] playerFabs;
 	public float speed = 6;
 	public int frameDelay = 100;
 	private int BossPNum = 2;
@@ -15,8 +16,34 @@ public class ConveyorBossControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		GlobalControl.AddPlayer (1);
-		GlobalControl.AddPlayer (2);
+		//Testing only
+		PlayerState.playerType = new PlayerType[5];
+
+		GlobalControl.AddPlayer(1);
+		PlayerState.playerType [1] = PlayerType.CHEF;
+
+		GlobalControl.AddPlayer(2);
+		PlayerState.playerType [2] = PlayerType.APPLE;
+
+		GlobalControl.AddPlayer(3);
+		PlayerState.playerType [3] = PlayerType.CARROT;
+
+		GlobalControl.AddPlayer(4);
+		PlayerState.playerType [4] = PlayerType.SAUSAGE;
+
+		for (int i = 0; i < GlobalControl.NumPlayers; i++) {
+			if (PlayerState.playerType [i + 1] == PlayerType.CHEF) {
+				BossPNum = i;
+			} else {
+				var player = Instantiate (playerFabs [0]);
+				player.transform.position += new Vector3 (i, 0, 0);
+				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
+				player.GetComponent<AffectedByConveyor> ().conveyor = GetComponent<ConveyorController> ();
+			}
+
+		}
+		//GlobalControl.AddPlayer (1);
+		//GlobalControl.AddPlayer (2);
 		currentObstacle = Instantiate (obPreFabs[Random.Range(0,obPreFabs.Length)]).GetComponent<Obstacle>();
 		currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
 		currentObstacle.transform.position = new Vector3(0, 7,0);
