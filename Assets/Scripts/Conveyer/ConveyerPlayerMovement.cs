@@ -12,7 +12,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GlobalControl.AddPlayer(1);
+        //GlobalControl.AddPlayer(1);
     }
 
     // Update is called once per frame

@@ -19,6 +19,15 @@ public class Obstacle : MonoBehaviour {
         }
 	}
 
+	void OnTriggerEnter2D(Collider2D other)
+	{	
+		if(other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
+		{
+			Debug.Log("Hits Bottom.");
+			GameObject.Destroy(gameObject);
+		}
+	}
+
 	public void setActive(ConveyorController c)
     {
 		var con = GetComponent<AffectedByConveyor> ();
