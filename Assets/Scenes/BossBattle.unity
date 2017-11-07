@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 35575638}
   - component: {fileID: 35575637}
   - component: {fileID: 35575636}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 1643478906199118, guid: 1db556fa22ff0ef428d4bf40364ee5d2, type: 2}
   delay: 0.5
-  playerNum: 2
+  playerNum: 4
   pooledAmt: 10
 --- !u!114 &35575638
 MonoBehaviour:
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0b66e78ac0b4b198c6d7251c785139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  num: 2
+  speed: 7
+  num: 4
 --- !u!61 &35575639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 35575635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.62, y: -2.16, z: 0}
-  m_LocalScale: {x: 0.28627175, y: 0.23258892, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -467,6 +467,10 @@ Prefab:
       propertyPath: ground
       value: 
       objectReference: {fileID: 640558239}
+    - target: {fileID: 1195516694636608, guid: b79dd4f37b7173844ab85ed483b4fe06, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b79dd4f37b7173844ab85ed483b4fe06, type: 2}
   m_IsPrefabParent: 0
@@ -512,7 +516,7 @@ GameObject:
   - component: {fileID: 1226142727}
   - component: {fileID: 1226142728}
   - component: {fileID: 1226142729}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 1226142722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.14, y: 0.78, z: 0}
-  m_LocalScale: {x: 0.28627175, y: 0.23258892, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -630,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0b66e78ac0b4b198c6d7251c785139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   num: 2
 --- !u!114 &1226142728
 MonoBehaviour:
@@ -762,7 +766,7 @@ GameObject:
   - component: {fileID: 1551663721}
   - component: {fileID: 1551663720}
   - component: {fileID: 1551663719}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 1643478906199118, guid: 1db556fa22ff0ef428d4bf40364ee5d2, type: 2}
   delay: 0.5
-  playerNum: 2
+  playerNum: 3
   pooledAmt: 10
 --- !u!114 &1551663721
 MonoBehaviour:
@@ -807,8 +811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0b66e78ac0b4b198c6d7251c785139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  num: 2
+  speed: 7
+  num: 3
 --- !u!61 &1551663722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -903,8 +907,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551663718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.75, y: -2.13, z: 0}
-  m_LocalScale: {x: 0.28627175, y: 0.23258892, z: 1}
+  m_LocalPosition: {x: -6.55, y: -3.09, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -953,6 +957,10 @@ Prefab:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1947149744200548, guid: 864ededdc83478b4a82d4299ed474279, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 864ededdc83478b4a82d4299ed474279, type: 2}
   m_IsPrefabParent: 0
@@ -969,7 +977,7 @@ GameObject:
   - component: {fileID: 1771783366}
   - component: {fileID: 1771783368}
   - component: {fileID: 1771783369}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,4 +1110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198844e232142854cb37e4df00ff4d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthImg: {fileID: 21300000, guid: 2d835e524e7bde245b048df52391bd8b, type: 3}
   Bosshealth: 20

@@ -20,13 +20,15 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject)
+        if (gameObject && other.gameObject.layer == 11)
         {
             print("hit");
             Playerhealth -= 1;
-            //Destroy(gameObject);
-
             print(Playerhealth);
+            if(Playerhealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
