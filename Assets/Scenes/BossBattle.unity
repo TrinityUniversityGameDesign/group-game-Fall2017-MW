@@ -320,7 +320,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d03588e437c446f0ba66409b28608b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bccd3b759b7d3a4fa31f7971c0e5294, type: 3}
   m_Color: {r: 0.9191176, g: 0.24329586, b: 0.24329586, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knife: {fileID: 1643478906199118, guid: 2d377c4a97cb0c4418f43c6811bb7224, type: 2}
   delay: 2
-  playerNum: 2
+  playerNum: 1
   pooledAmt: 3
 --- !u!114 &1771783369
 MonoBehaviour:
