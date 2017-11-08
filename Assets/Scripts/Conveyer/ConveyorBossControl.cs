@@ -26,8 +26,8 @@ public class ConveyorBossControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		
-		for (int i = 0; i < GlobalControl.NumPlayers; i++) {
-			if (PlayerState.playerType [i + 1] == PlayerType.CHEF) {
+		for (int i = 1; i < GlobalControl.NumPlayers; i++) {
+			if (PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
 			} else {
 				var player = Instantiate (playerFabs [0]);
