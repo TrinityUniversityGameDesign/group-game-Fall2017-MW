@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ConveyorBossControl : MonoBehaviour {
@@ -15,6 +16,7 @@ public class ConveyorBossControl : MonoBehaviour {
     public Text text;
 	public List<GameObject> players;
 	public System.Predicate<GameObject> isDisabled = IsEnabled;
+    private float pause = 1.0f; 
 
 	private static bool IsEnabled(GameObject obj)
 	{
@@ -56,14 +58,15 @@ public class ConveyorBossControl : MonoBehaviour {
 		currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
 		currentObstacle.transform.position = new Vector3(0, 7,0);
 
-        StartCoroutine(GameTimer(10));
+        StartCoroutine(GameTimer(60));
     }
 
     // Update is called once per frame
     void Update()
     {
 		if (players.TrueForAll (isDisabled)) {
-			Debug.Log ("Game Over");
+            ChangeScene("End_Screen");
+            Debug.Log ("Game Over");
 		}
         frameCt++;
         if (currentObstacle != null)
@@ -99,6 +102,12 @@ public class ConveyorBossControl : MonoBehaviour {
             text.text = "Time Left: " + Mathf.Round(i) + "    ";
             yield return new WaitForSeconds(1);
         }
-        //END SCENE
+        ChangeScene("End_Screen");
+    }
+
+    public static void ChangeScene (string levelName)
+    {
+        Debug.Log("Time Up");
+        SceneManager.LoadScene(levelName);
     }
 }
