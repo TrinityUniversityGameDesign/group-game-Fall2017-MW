@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonPress : MonoBehaviour {
 
+    public string scene = "MorganScene";
 	// Use this for initialization
 	void Start () {
 		//Testing only
@@ -26,9 +27,9 @@ public class ButtonPress : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(GlobalControl.GetButtonA(2))
+		if(GlobalControl.GetButtonA(1))
         {
-            SceneManager.LoadScene("MorganScene");
+            SceneManager.LoadScene(scene);
         }
 	}
 
