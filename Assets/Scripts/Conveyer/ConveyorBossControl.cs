@@ -13,6 +13,13 @@ public class ConveyorBossControl : MonoBehaviour {
 	private Obstacle currentObstacle;
 	private int frameCt = 0;
     public Text text;
+	public List<GameObject> players;
+	public System.Predicate<GameObject> isDisabled = IsEnabled;
+
+	private static bool IsEnabled(GameObject obj)
+	{
+		return !obj.activeSelf;
+	}
 
     // Use this for initialization
     void Start () {
@@ -39,6 +46,7 @@ public class ConveyorBossControl : MonoBehaviour {
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
 				player.GetComponent<AffectedByConveyor> ().conveyor = GetComponent<ConveyorController> ();
+				players.Add (player);
 			}
 
 		}
@@ -54,6 +62,9 @@ public class ConveyorBossControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+		if (players.TrueForAll (isDisabled)) {
+			Debug.Log ("Game Over");
+		}
         frameCt++;
         if (currentObstacle != null)
         {
