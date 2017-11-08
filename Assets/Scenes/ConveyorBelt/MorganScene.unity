@@ -292,9 +292,20 @@ Prefab:
       propertyPath: text
       value: 
       objectReference: {fileID: 1947200105}
+    - target: {fileID: 114263501497917848, guid: c06580c4658a841a0a33921faaf1d1ea,
+        type: 2}
+      propertyPath: conveyor
+      value: 
+      objectReference: {fileID: 1078264095}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c06580c4658a841a0a33921faaf1d1ea, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1078264095 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114382144949212838, guid: c06580c4658a841a0a33921faaf1d1ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 1078264094}
+  m_Script: {fileID: 11500000, guid: e85b8a03601444acab3eae82b72f8997, type: 3}
 --- !u!1 &1217777471
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +461,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 637d5a20dce4f6a429f1065f40f3b460, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
