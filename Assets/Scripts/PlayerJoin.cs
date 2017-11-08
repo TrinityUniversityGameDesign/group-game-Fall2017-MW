@@ -49,6 +49,11 @@ public class PlayerJoin : MonoBehaviour {
             startText.text = "Player 1 Press Start to Begin";
             if(GlobalControl.GetButtonDownStart(1))
             {
+                PlayerState.playerType = new PlayerType[5];
+                PlayerState.playerType[1] = PlayerType.APPLE;
+                PlayerState.playerType[2] = PlayerType.CARROT;
+                PlayerState.playerType[3] = PlayerType.SAUSAGE;
+                PlayerState.playerType[4] = PlayerType.STRAWBERRY;
                 SceneManager.LoadScene("HotPotato");
             }
         }
