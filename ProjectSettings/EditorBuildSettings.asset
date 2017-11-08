@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scene.unity
     guid: 959e24fc2e82caa42acde87de096c218
   - enabled: 1
+    path: Assets/Scenes/PlayerSelect.unity
+    guid: 9aaf49c1c48cf364c81fb4045f897a27
+  - enabled: 1
+    path: Assets/Scenes/HotPotato.unity
+    guid: c22bc9d8a0ec8e34aa52cf976208fbef
+  - enabled: 1
     path: Assets/Scenes/BossBattle.unity
     guid: 1c35bbddb6f1a4806a22de407fd8df93
   - enabled: 1
@@ -23,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConveyorBelt/End_Screen.unity
     guid: b18557cdb0819154c8c905f8ada1c2d7
+  - enabled: 1
+    path: Assets/Scenes/ConveyorBelt/Start_Screen.unity
+    guid: 8e5fc5ed73fcde044ba7839fdc03aead
