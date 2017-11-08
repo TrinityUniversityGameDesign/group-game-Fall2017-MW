@@ -82,6 +82,7 @@ public class knifeThrow : MonoBehaviour {
             Invoke("ResetReadyToShoot", delay);
         }
 
+
     }
     void ResetReadyToShoot()
     {

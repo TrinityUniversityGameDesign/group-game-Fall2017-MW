@@ -7,26 +7,32 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
 
-    public float Playerhealth = 5;
+    public float Playerhealth;
+
+    float dom;
 
 	public float timeDelay = 300;
 
 	public Text win;
 
-	// Use this for initialization
-	void Start () {
-		
+    public Slider healthbar;
+
+    // Use this for initialization
+    void Start () {
+        dom = Playerhealth;
+        healthbar.value = healthLeft();
+        BossHealth.deadPlayers = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        healthbar.value = healthLeft();
+    }
 
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject && other.gameObject.layer == 11)
+        if (gameObject && other.gameObject.layer == 11 && BossHealth.Bosshealth > 0)
         {
             print("hit");
             Playerhealth -= 1;
@@ -34,8 +40,16 @@ public class PlayerHealth : MonoBehaviour {
             if(Playerhealth <= 0)
             {
                 BossHealth.deadPlayers += 1;
+                healthbar.value = healthLeft();
                 gameObject.SetActive(false);
             }
         }
     }
+
+
+    float healthLeft()
+    {
+        return Playerhealth / dom;
+    }
+
 }
