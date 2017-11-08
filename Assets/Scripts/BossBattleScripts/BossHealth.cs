@@ -14,15 +14,19 @@ public class BossHealth : MonoBehaviour
 
 	public float timeDelay = 300;
 
+    public Slider healthbar;
+
     // Use this for initialization
     void Start()
     {
+        healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        healthbar.value = healthLeft();
         if(Bosshealth <= 0)
         {
 			win.GetComponent<Text> ().enabled = true;
@@ -43,5 +47,10 @@ public class BossHealth : MonoBehaviour
             Bosshealth -= 1;
             print(Bosshealth);
         }
+    }
+    
+    float healthLeft()
+    {
+        return Bosshealth / 20f;
     }
 }
