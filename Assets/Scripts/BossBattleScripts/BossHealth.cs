@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -8,9 +10,14 @@ public class BossHealth : MonoBehaviour
 
     public float Bosshealth = 20;
 
+	public Text win;
+
+	public float timeDelay = 300;
+
     // Use this for initialization
     void Start()
     {
+		win.GetComponent<Text> ().enabled = false;
     }
 
     // Update is called once per frame
@@ -18,8 +25,14 @@ public class BossHealth : MonoBehaviour
     { 
         if(Bosshealth <= 0)
         {
-            Destroy(gameObject);
+			win.GetComponent<Text> ().enabled = true;
+			win.text = "Players Win";
+			timeDelay -= 1;
+			if (timeDelay <= 0) {
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+			}
         }
+			
     }
 
 
