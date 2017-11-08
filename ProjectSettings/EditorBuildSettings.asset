@@ -12,5 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/BossBattle.unity
     guid: 1c35bbddb6f1a4806a22de407fd8df93
   - enabled: 1
+    path: Assets/Scenes/endScreen_boss.unity
+    guid: a2a27707d8fe9ac4db5b6043556a2e02
+  - enabled: 1
     path: Assets/Scenes/jerry_scene.unity
     guid: b58d8da605456c94299d651363c0fe84

@@ -20,15 +20,6 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Playerhealth <= 0)
-		{
-			win.GetComponent<Text> ().enabled = true;
-			win.text = "Boss Win";
-			timeDelay -= 1;
-			if (timeDelay <= 0) {
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
-			}
-		}
 		
 	}
 
@@ -42,7 +33,8 @@ public class PlayerHealth : MonoBehaviour {
             print(Playerhealth);
             if(Playerhealth <= 0)
             {
-                Destroy(gameObject);
+                BossHealth.deadPlayers += 1;
+                gameObject.SetActive(false);
             }
         }
     }

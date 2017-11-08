@@ -19,7 +19,7 @@ public class ShotMovement : MonoBehaviour {
     {
         if (gameObject && other.gameObject.layer == 11)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

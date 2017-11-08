@@ -15,6 +15,7 @@ public class BossHealth : MonoBehaviour
 	public float timeDelay = 300;
 
     public Slider healthbar;
+    public static int deadPlayers = 0;
 
     // Use this for initialization
     void Start()
@@ -36,7 +37,17 @@ public class BossHealth : MonoBehaviour
 				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 			}
         }
-			
+        if (deadPlayers >= 3)
+        {
+            win.GetComponent<Text>().enabled = true;
+            win.text = "Boss Win";
+            timeDelay -= 1;
+            if (timeDelay <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
     }
 
 
