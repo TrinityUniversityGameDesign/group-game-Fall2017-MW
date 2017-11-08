@@ -11,6 +11,7 @@ public class targetFairy : MonoBehaviour {
 	void Start () {
         GlobalControl.AddPlayer(1);
         GlobalControl.AddPlayer(2);
+        GlobalControl.AddPlayer(3);
     }
 	
 	// Update is called once per frame

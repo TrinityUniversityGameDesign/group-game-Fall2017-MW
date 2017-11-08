@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212176796231624950}
   - component: {fileID: 61331479031172274}
   - component: {fileID: 114492283243940526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Meat-Mallet-icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +83,8 @@ MonoBehaviour:
   speed: 5
   num: 1
   smash: 0
+  flip: 0
+  ogSpot: {x: 0, y: 0, z: 0}
 --- !u!212 &212176796231624950
 SpriteRenderer:
   m_ObjectHideFlags: 1
