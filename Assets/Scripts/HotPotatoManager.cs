@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HotPotatoManager : MonoBehaviour {
 
@@ -83,8 +84,9 @@ public class HotPotatoManager : MonoBehaviour {
 		if (playersLeft >= 2) {
 			StartNewRound ();
 		} else {
-			
-			Debug.Log (chefIndex + " Won!!");
+            Destroy(boomerang.gameObject);
+            PlayerState.playerType[chefIndex] = PlayerType.CHEF;
+            SceneManager.LoadScene("Start_Screen");
 		}
 	}
 }
