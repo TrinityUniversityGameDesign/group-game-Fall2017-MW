@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour {
 			boomerang.transform.position = transform.position + transform.right.normalized*0.6f + transform.up.normalized*0.3f;
 			spriteRenderer.color = Color.white;
 			boomerang.SetActive (true);
+
 			boomerang.GetComponent<BoomerangController> ().Throw (transform.up + 0.45f* transform.right);
 			boomerang = null;
 		}
