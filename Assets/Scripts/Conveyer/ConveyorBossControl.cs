@@ -60,7 +60,7 @@ public class ConveyorBossControl : MonoBehaviour {
 
             currentObstacle.transform.position += new Vector3(GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed, 0, 0);
             //Debug.Log ("Updating " + Input.GetButton ("X_P1"));
-            if (Input.GetButtonDown("X_P1"))
+			if (GlobalControl.GetButtonA(BossPNum))
             {
                 Debug.Log("Pressed");
                 currentObstacle.GetComponent<Obstacle>().setActive(conveyor);
