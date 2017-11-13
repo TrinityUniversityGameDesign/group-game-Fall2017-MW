@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 637d5a20dce4f6a429f1065f40f3b460
+timeCreated: 1510001256
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Noodle soup
+  fontNames:
+  - Noodle soup
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
