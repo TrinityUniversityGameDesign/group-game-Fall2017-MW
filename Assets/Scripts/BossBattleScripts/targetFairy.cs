@@ -9,9 +9,9 @@ public class targetFairy : MonoBehaviour {
     public int num;
 	// Use this for initialization
 	void Start () {
-        GlobalControl.AddPlayer(1);
+        /*GlobalControl.AddPlayer(1);
         GlobalControl.AddPlayer(2);
-        GlobalControl.AddPlayer(3);
+        GlobalControl.AddPlayer(3);*/
     }
 	
 	// Update is called once per frame
