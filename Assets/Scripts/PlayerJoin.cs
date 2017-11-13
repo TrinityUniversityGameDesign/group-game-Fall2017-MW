@@ -13,6 +13,7 @@ public class PlayerJoin : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GlobalControl.NumPlayers = 0;
         playerBlockPrefab = Resources.Load<GameObject>("Prefabs/playerBlock");
         playerBlocks = new GameObject[5];
         playerBlocks[1] = Instantiate(playerBlockPrefab, new Vector3(-6,-3,0), Quaternion.identity);
