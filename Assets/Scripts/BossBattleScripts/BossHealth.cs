@@ -8,7 +8,10 @@ public class BossHealth : MonoBehaviour
 {
     public Sprite healthImg;
 
-    public float Bosshealth = 20;
+    public static float Bosshealth = 50;
+
+    float dom;
+    
 
 	public Text win;
 
@@ -20,6 +23,8 @@ public class BossHealth : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Bosshealth = 50;
+        dom = Bosshealth;
         healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
     }
@@ -62,6 +67,6 @@ public class BossHealth : MonoBehaviour
     
     float healthLeft()
     {
-        return Bosshealth / 20f;
+        return Bosshealth / dom;
     }
 }
