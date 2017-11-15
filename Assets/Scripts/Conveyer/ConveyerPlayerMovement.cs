@@ -21,15 +21,19 @@ public class ConveyerPlayerMovement : MonoBehaviour
     {
 		var x = (GlobalControl.GetHorizontal (playerNum) * 0.05f * speed);
 		var y = (GlobalControl.GetVertical (playerNum) * 0.05f * speed);
-		if (transform.position.x + x > bounds.max.x)
-			y = Mathf.Clamp (x, 0, int.MaxValue);
+		/*if (transform.position.x + x > bounds.max.x) {
+			Debug.Log ("Clamping x!");
+			x = Mathf.Clamp (x, 0, int.MaxValue);
+		}
 		else if(transform.position.x + x < bounds.min.x)
-			y = Mathf.Clamp (x, int.MinValue,0);
+			x = Mathf.Clamp (x, int.MinValue,0);
 
-		if (transform.position.y + y > bounds.max.y)
+		if (transform.position.y + y > bounds.max.y) {
+			Debug.Log ("Clamping y!");
 			y = Mathf.Clamp (y, 0, int.MaxValue);
+		}
 		else if(transform.position.y + y < bounds.min.x)
-			y = Mathf.Clamp (y, int.MinValue,0);
+			y = Mathf.Clamp (y, int.MinValue,0);*/
 		
         if (canMove)
 			transform.position += new Vector3(x,y, 0);
