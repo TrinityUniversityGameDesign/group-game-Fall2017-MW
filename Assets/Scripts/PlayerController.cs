@@ -10,15 +10,16 @@ public class PlayerController : MonoBehaviour {
 	public bool holding;
 
 	private Rigidbody2D rigid2d;
+	public PolygonCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
 	private GameObject boomerang;
-	private Transform shootingPointTransform;
 
 	void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		rigid2d = GetComponent<Rigidbody2D> ();
-		shootingPointTransform = GetComponentInChildren<Transform> ();
+		myCollider = GetComponent<PolygonCollider2D> ();
 	}
+
 	void Start () {
 	}
 
@@ -65,9 +66,10 @@ public class PlayerController : MonoBehaviour {
 
 	private void ThrowBoomerang() {
 		if (boomerang != null) {
-			boomerang.transform.position = transform.position + transform.right.normalized*2f + transform.up.normalized*2f;
-			boomerang.SetActive (true);
+			boomerang.transform.position = transform.position + transform.right.normalized*0.6f + transform.up.normalized*0.3f;
 			spriteRenderer.color = Color.white;
+			boomerang.SetActive (true);
+
 			boomerang.GetComponent<BoomerangController> ().Throw (transform.up + 0.45f* transform.right);
 			boomerang = null;
 		}

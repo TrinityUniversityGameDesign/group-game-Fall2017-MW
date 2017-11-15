@@ -8,6 +8,7 @@ public class ButtonPress : MonoBehaviour {
     public string scene = "MorganScene";
 	// Use this for initialization
 	void Start () {
+        /*
 		//Testing only
 		PlayerState.playerType = new PlayerType[5];
 
@@ -22,7 +23,7 @@ public class ButtonPress : MonoBehaviour {
 
 		GlobalControl.AddPlayer(4);
 		PlayerState.playerType [4] = PlayerType.SAUSAGE;
-
+        */
 	}
 	
 	// Update is called once per frame
