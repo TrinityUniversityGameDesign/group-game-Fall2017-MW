@@ -15,7 +15,7 @@ public class HotPotatoManager : MonoBehaviour {
 	private bool[] isAlive = { false, false, false, false, false };
 	private BoomerangController boomerang;
 
-    public Animation poof;
+    public Animator PoofController;
 
 	void Start () {
 
@@ -68,9 +68,17 @@ public class HotPotatoManager : MonoBehaviour {
 	}
 
 
-	void Elimination() {
-		int deadPlayerIndex = boomerang.lastHolder.playerNum;
+    void Elimination() {
+        int deadPlayerIndex = boomerang.lastHolder.playerNum;
+        players[deadPlayerIndex].GetComponent<SpriteRenderer>().color = Color.white;
+        players[deadPlayerIndex].GetComponent<Animator>().SetBool("isDead", true);
+        StartCoroutine(FinishElimination(deadPlayerIndex));
+    }
 
+
+    IEnumerator FinishElimination(int deadPlayerIndex)
+    {
+        yield return new WaitForSeconds(1.5f);
 		Destroy (players [deadPlayerIndex]);
 		isAlive [deadPlayerIndex] = false;
 
