@@ -25,7 +25,8 @@ public class ConveyorBossControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		GlobalControl.AddPlayer (1);
+		GlobalControl.AddPlayer (2);
 		for (int i = 1; i <= GlobalControl.NumPlayers; i++) {
 			if (PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
@@ -38,7 +39,7 @@ public class ConveyorBossControl : MonoBehaviour {
 			}
 
 		}
-		//GlobalControl.AddPlayer (1);
+		//
 		//GlobalControl.AddPlayer (2);
 		currentObstacle = Instantiate (obPreFabs[Random.Range(0,obPreFabs.Length)]).GetComponent<Obstacle>();
 		currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
@@ -96,4 +97,6 @@ public class ConveyorBossControl : MonoBehaviour {
         Debug.Log("Time Up");
         SceneManager.LoadScene(levelName);
     }
+
+
 }
