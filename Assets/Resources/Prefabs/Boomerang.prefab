@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4544238310598936}
   - component: {fileID: 212731070382834110}
   - component: {fileID: 50473362364453142}
-  - component: {fileID: 61646904440431950}
   - component: {fileID: 114712623235655266}
+  - component: {fileID: 60683673527755106}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Boomerang
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447475732584416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.45, y: 1.42, z: 0}
+  m_LocalPosition: {x: 2.55, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61646904440431950
-BoxCollider2D:
+--- !u!60 &60683673527755106
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -85,9 +85,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.4330127, y: -0.25000003}
+      - {x: 0.43301272, y: -0.24999996}
 --- !u!114 &114712623235655266
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,13 +13,16 @@ public class BoomerangController : MonoBehaviour {
 	private bool trackingBack;
 	private bool inTheAir;
 	private Rigidbody2D rigid2d;
+	private PolygonCollider2D myCollider; 
 
-
-	void Start () {
+	void Awake() {
+		myCollider = GetComponent<PolygonCollider2D> ();
 		rigid2d = GetComponent<Rigidbody2D> ();
 	}
+	void Start () {
+
+	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (inTheAir) {
 			if (trackingBack) {
@@ -38,29 +41,36 @@ public class BoomerangController : MonoBehaviour {
 	}
 
 	public void Throw(Vector3 upDirection) {
-
+		Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, true);
 		Debug.Log ("set intheair true");
-
 		transform.up = upDirection;
 		inTheAir = true;
 		StartCoroutine(BackToLastHolder ());
+
 	}
 
 	IEnumerator BackToLastHolder() {
 		yield return new WaitForSeconds (delay);
+		Debug.Log ("ignore false 1");
+		Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, false);
 		if (inTheAir) {
 			trackingBack = true;
 		}
 	}
 
 	public void GetHolder(GameObject player) {
+		
 		inTheAir = false;
 		trackingBack = false;
 		lastHolder = player.GetComponent<PlayerController> ();
+		Debug.Log ("ignore true ");
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
+		Debug.Log ("Collide with " + collider.name);
 		if (collider.tag == "Player") {
+			Debug.Log ("ignore false 2");
+			Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, false);
 			GetHolder (collider.gameObject);
 		}
 	}
