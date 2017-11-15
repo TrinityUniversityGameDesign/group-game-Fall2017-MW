@@ -7,7 +7,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
 	public int playerNum = 1;
     public float speed = 4;
     private bool canMove = true;
-    private float stun = 2.0f;
+    private float stun = 1.0f;
     private float delayDrop = 2.0f;
 
     // Use this for initialization
@@ -25,7 +25,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {	
-        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
 			canMove = false;
 			StartCoroutine(ObstacleTimer(stun));
