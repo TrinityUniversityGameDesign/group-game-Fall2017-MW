@@ -50,7 +50,7 @@ public class HotPotatoManager : MonoBehaviour {
 				aud.pitch += 0.05f;
 			}
 		}
-		if (countdown == 4000) {
+		if (countdown == 2000) {
 			Elimination ();
 		}
 	}
@@ -58,7 +58,7 @@ public class HotPotatoManager : MonoBehaviour {
 	void StartNewRound() {
 		countdown = 0;
 		aud.Play ();
-
+        aud.pitch = 1;
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [i]) {
 				players [i].GetComponent<PlayerController>().GetBoomerang (boomerang);
