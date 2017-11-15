@@ -8,11 +8,12 @@ public class ConveyerPlayerMovement : MonoBehaviour
     public float speed = 4;
     private bool canMove = true;
     private float stun = 2.0f;
+    private float delayDrop = 2.0f;
 
     // Use this for initialization
     void Start()
     {
-        //GlobalControl.AddPlayer(1);
+        StartCoroutine(DropTimer(delayDrop));
     }
 
     // Update is called once per frame
@@ -43,4 +44,10 @@ public class ConveyerPlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    private IEnumerator DropTimer(float seconds)
+    {
+        gameObject.GetComponent<AffectedByConveyor>().isActive = false;
+        yield return new WaitForSeconds(seconds);
+        gameObject.GetComponent<AffectedByConveyor>().isActive = true;
+    }
 }
