@@ -75,12 +75,13 @@ public class knifeThrow : MonoBehaviour {
             readyToShoot = false;
             Invoke("ResetReadyToShoot", delay);
         }
-        if (GlobalControl.GetButtonDownA(playerNum) && readyToShoot)
+        if (GlobalControl.GetButtonDownX(playerNum) && readyToShoot)
         {
             FireLow();
             readyToShoot = false;
             Invoke("ResetReadyToShoot", delay);
         }
+
 
     }
     void ResetReadyToShoot()

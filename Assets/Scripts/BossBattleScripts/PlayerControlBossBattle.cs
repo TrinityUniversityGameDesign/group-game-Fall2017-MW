@@ -26,9 +26,8 @@ public class PlayerControlBossBattle : MonoBehaviour {
 		//want to make a double jump, you can only jup is you have a jump left. 
 		bool jump = GlobalControl.GetButtonDownA(num);
 
-		if (jump) {
+		if (jump && theRigidBody.transform.position.y < (-3.10) ) {
 			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);
-
 		}
 
 

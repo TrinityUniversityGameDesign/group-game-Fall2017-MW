@@ -13,6 +13,7 @@ public class PlayerJoin : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GlobalControl.NumPlayers = 0;
         playerBlockPrefab = Resources.Load<GameObject>("Prefabs/playerBlock");
         playerBlocks = new GameObject[5];
         playerBlocks[1] = Instantiate(playerBlockPrefab, new Vector3(-6,-3,0), Quaternion.identity);
@@ -49,6 +50,11 @@ public class PlayerJoin : MonoBehaviour {
             startText.text = "Player 1 Press Start to Begin";
             if(GlobalControl.GetButtonDownStart(1))
             {
+                PlayerState.playerType = new PlayerType[5];
+                PlayerState.playerType[1] = PlayerType.APPLE;
+                PlayerState.playerType[2] = PlayerType.CARROT;
+                PlayerState.playerType[3] = PlayerType.SAUSAGE;
+                PlayerState.playerType[4] = PlayerType.STRAWBERRY;
                 SceneManager.LoadScene("HotPotato");
             }
         }

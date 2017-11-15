@@ -15,4 +15,11 @@ public class ShotMovement : MonoBehaviour {
 	void Update () {
 		theRigidBody.velocity = new Vector2(speed, theRigidBody.velocity.y);
 	}
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (gameObject && other.gameObject.layer == 11)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

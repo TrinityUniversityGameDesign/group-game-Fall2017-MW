@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ConveyorBossControl : MonoBehaviour {
@@ -13,32 +14,27 @@ public class ConveyorBossControl : MonoBehaviour {
 	private Obstacle currentObstacle;
 	private int frameCt = 0;
     public Text text;
+	public List<GameObject> players;
+	public System.Predicate<GameObject> isDisabled = IsEnabled;
+    private float pause = 1.0f; 
+
+	private static bool IsEnabled(GameObject obj)
+	{
+		return !obj.activeSelf;
+	}
 
     // Use this for initialization
     void Start () {
-		//Testing only
-		PlayerState.playerType = new PlayerType[5];
-
-		GlobalControl.AddPlayer(1);
-		PlayerState.playerType [1] = PlayerType.CHEF;
-
-		GlobalControl.AddPlayer(2);
-		PlayerState.playerType [2] = PlayerType.APPLE;
-
-		GlobalControl.AddPlayer(3);
-		PlayerState.playerType [3] = PlayerType.CARROT;
-
-		GlobalControl.AddPlayer(4);
-		PlayerState.playerType [4] = PlayerType.SAUSAGE;
-
-		for (int i = 0; i < GlobalControl.NumPlayers; i++) {
-			if (PlayerState.playerType [i + 1] == PlayerType.CHEF) {
+		
+		for (int i = 1; i <= GlobalControl.NumPlayers; i++) {
+			if (PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
 			} else {
 				var player = Instantiate (playerFabs [0]);
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
 				player.GetComponent<AffectedByConveyor> ().conveyor = GetComponent<ConveyorController> ();
+				players.Add (player);
 			}
 
 		}
@@ -48,19 +44,23 @@ public class ConveyorBossControl : MonoBehaviour {
 		currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
 		currentObstacle.transform.position = new Vector3(0, 7,0);
 
-        StartCoroutine(GameTimer(10));
+        StartCoroutine(GameTimer(60));
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (players.TrueForAll (isDisabled)) {
+            ChangeScene("End_Screen");
+            Debug.Log ("Game Over");
+		}
         frameCt++;
         if (currentObstacle != null)
         {
 
             currentObstacle.transform.position += new Vector3(GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed, 0, 0);
             //Debug.Log ("Updating " + Input.GetButton ("X_P1"));
-            if (Input.GetButtonDown("X_P1"))
+			if (GlobalControl.GetButtonA(BossPNum))
             {
                 Debug.Log("Pressed");
                 currentObstacle.GetComponent<Obstacle>().setActive(conveyor);
@@ -88,6 +88,12 @@ public class ConveyorBossControl : MonoBehaviour {
             text.text = "Time Left: " + Mathf.Round(i) + "    ";
             yield return new WaitForSeconds(1);
         }
-        //END SCENE
+        ChangeScene("End_Screen");
+    }
+
+    public static void ChangeScene (string levelName)
+    {
+        Debug.Log("Time Up");
+        SceneManager.LoadScene(levelName);
     }
 }
