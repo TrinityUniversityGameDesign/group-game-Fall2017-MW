@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114024115659372166}
   - component: {fileID: 50536539379734818}
   - component: {fileID: 60642936924311752}
+  - component: {fileID: 95442227987502138}
   m_Layer: 0
   m_Name: HotPotatoPlayer
   m_TagString: Player
@@ -119,6 +120,23 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!95 &95442227987502138
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1188579093983500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13ccdfb77c333fb4186b291f81c424ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114024115659372166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +152,7 @@ MonoBehaviour:
   speed: 15
   rotatingSpeed: 100
   holding: 0
+  myCollider: {fileID: 0}
 --- !u!212 &212631707314957784
 SpriteRenderer:
   m_ObjectHideFlags: 1

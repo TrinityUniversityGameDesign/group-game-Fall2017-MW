@@ -6,13 +6,14 @@ public class mallet_time : MonoBehaviour {
 
     // Use this for initialization
     private Vector3 hammerLoc;
-   public Transform target;
+    public Transform target;
     public Transform ground;
     public float speed;
     public int num;
     public bool smash;
     public bool flip;
     public Vector3 ogSpot;
+    public float cooldown;
 
    void Start()
     {
@@ -60,8 +61,8 @@ public class mallet_time : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update(){
-  
+    void Update() {
+
         float step = speed * Time.deltaTime;
         hammerLoc = target.transform.position;
 
@@ -72,11 +73,28 @@ public class mallet_time : MonoBehaviour {
         {
             go_up(ogSpot, step);
         }
-        
+
         if (GlobalControl.GetButtonDownA(num))
         {
             smash = true;
-        } 
+        }
+        if(smash == true)
+        {
+            cooldown += 50;
+        }
+        if(smash == false)
+        {
+            cooldown -= 1;
+            
+        if( cooldown < 0)
+            {
+                cooldown = 0;
+            }
+        }
+        if (cooldown > 0 && smash == false)
+        {
+           
+        }
 
     }
     }

@@ -27,22 +27,26 @@ public class PlayerJoin : MonoBehaviour {
         if (Input.GetButtonDown("A_P1") && hasJoined[1] == false)
         {
             hasJoined[1] = true;
-            playerBlocks[GlobalControl.AddPlayer(1)].GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
+			GlobalControl.AddPlayer (1);
+			playerBlocks [GlobalControl.NumPlayers].GetComponent<SpriteRenderer> ().color = PlayerState.playerColor [GlobalControl.NumPlayers];
         }
         if (Input.GetButtonDown("A_P2") && hasJoined[2] == false)
         {
             hasJoined[2] = true;
-            playerBlocks[GlobalControl.AddPlayer(2)].GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
+			GlobalControl.AddPlayer (2);
+			playerBlocks[GlobalControl.NumPlayers].GetComponent<SpriteRenderer>().color = PlayerState.playerColor [GlobalControl.NumPlayers];
         }
         if (Input.GetButtonDown("A_P3") && hasJoined[3] == false)
         {
             hasJoined[3] = true;
-            playerBlocks[GlobalControl.AddPlayer(3)].GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
+			GlobalControl.AddPlayer (3);
+			playerBlocks[GlobalControl.NumPlayers].GetComponent<SpriteRenderer>().color = PlayerState.playerColor [GlobalControl.NumPlayers];
         }
         if (Input.GetButtonDown("A_P4") && hasJoined[4] == false)
         {
             hasJoined[4] = true;
-            playerBlocks[GlobalControl.AddPlayer(4)].GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
+			GlobalControl.AddPlayer (4);
+			playerBlocks[GlobalControl.NumPlayers].GetComponent<SpriteRenderer>().color = PlayerState.playerColor [GlobalControl.NumPlayers];
         }
 
         if (GlobalControl.NumPlayers > 1)
