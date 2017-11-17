@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c32b632a3bec5742bc8c3d915ecb61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playerhealth: 5
+  Playerhealth: 7
   timeDelay: 300
   win: {fileID: 58744659}
   healthbar: {fileID: 1546150398}
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c32b632a3bec5742bc8c3d915ecb61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playerhealth: 5
+  Playerhealth: 7
   timeDelay: 300
   win: {fileID: 58744659}
   healthbar: {fileID: 1817640020}
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c32b632a3bec5742bc8c3d915ecb61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playerhealth: 5
+  Playerhealth: 7
   timeDelay: 300
   win: {fileID: 58744659}
   healthbar: {fileID: 783057618}
