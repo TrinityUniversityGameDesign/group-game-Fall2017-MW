@@ -9,6 +9,7 @@ public class HotPotatoManager : MonoBehaviour {
 	public GameObject boomerangPrefab;
 
 	public int countdown = 0;
+    private int playerCountdown = 0;
 
 	private AudioSource aud;
 	private GameObject[] players = new GameObject[5];
@@ -32,6 +33,7 @@ public class HotPotatoManager : MonoBehaviour {
 
 		GameObject boomerangObject = Instantiate (boomerangPrefab, Vector3.zero, Quaternion.identity);
 		boomerang = boomerangObject.GetComponent<BoomerangController> ();
+        boomerang.man = this;
 		if (boomerang == null) {
 			Debug.Log ("null 1");
 		}
@@ -45,6 +47,7 @@ public class HotPotatoManager : MonoBehaviour {
 	}
 	void FixedUpdate() {
 		countdown++;
+        playerCountdown++;
 		if (countdown >= 1000) {
 			if (countdown % 100 == 0) {
 				aud.pitch += 0.05f;
@@ -53,6 +56,10 @@ public class HotPotatoManager : MonoBehaviour {
 		if (countdown == 2000) {
 			Elimination ();
 		}
+        if (playerCountdown == 1000)
+        {
+            Elimination();
+        }
 	}
 
 	void StartNewRound() {
@@ -66,6 +73,11 @@ public class HotPotatoManager : MonoBehaviour {
 			}
 		}
 	}
+
+    public void playerCatch()
+    {
+        playerCountdown = 0;
+    }
 
 
     void Elimination() {

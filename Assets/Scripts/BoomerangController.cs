@@ -8,12 +8,14 @@ public class BoomerangController : MonoBehaviour {
 	public float trackingRotatingSpeed;
 	public float flyingSpeed;
 	public PlayerController lastHolder;
+    public PlayerController temp;
 	public float delay;
 
 	private bool trackingBack;
 	private bool inTheAir;
 	private Rigidbody2D rigid2d;
-	private PolygonCollider2D myCollider; 
+	private PolygonCollider2D myCollider;
+    public HotPotatoManager man;
 
 	void Awake() {
 		myCollider = GetComponent<PolygonCollider2D> ();
@@ -70,8 +72,13 @@ public class BoomerangController : MonoBehaviour {
 		Debug.Log ("Collide with " + collider.name);
 		if (collider.tag == "Player") {
 			Debug.Log ("ignore false 2");
+            temp = lastHolder;
 			Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, false);
 			GetHolder (collider.gameObject);
+            if (temp != lastHolder)
+            {
+                man.playerCatch();
+            }
 		}
 	}
 }
