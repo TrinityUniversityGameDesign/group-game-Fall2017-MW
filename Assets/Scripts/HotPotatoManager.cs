@@ -9,11 +9,8 @@ public class HotPotatoManager : MonoBehaviour {
 	public GameObject boomerangPrefab;
 
 	public int countdown = 0;
-<<<<<<< HEAD
     private int playerCountdown = 0;
-=======
 	private int endTime;
->>>>>>> d0a0fc1920f602e9856fa6ffcd561f7c8e0674ad
 
 	private AudioSource aud;
 	private GameObject[] players = new GameObject[5];
