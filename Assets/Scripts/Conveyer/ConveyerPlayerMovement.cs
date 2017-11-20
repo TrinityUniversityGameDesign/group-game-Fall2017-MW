@@ -7,6 +7,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
 	public int playerNum = 1;
     public float speed = 4;
     private bool canMove = true;
+	private float delayDrop = 2.0f;
     private float stun = 2.0f;
 	private Bounds bounds;
     // Use this for initialization
@@ -14,6 +15,8 @@ public class ConveyerPlayerMovement : MonoBehaviour
 	{
 		bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
         //GlobalControl.AddPlayer(1);
+
+		StartCoroutine(DropTimer(delayDrop));
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {	
-        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
 			canMove = false;
 			StartCoroutine(ObstacleTimer(stun));
@@ -78,4 +81,10 @@ public class ConveyerPlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    private IEnumerator DropTimer(float seconds)
+    {
+        gameObject.GetComponent<AffectedByConveyor>().isActive = false;
+        yield return new WaitForSeconds(seconds);
+        gameObject.GetComponent<AffectedByConveyor>().isActive = true;
+    }
 }
