@@ -306,6 +306,11 @@ Prefab:
       propertyPath: conveyor
       value: 
       objectReference: {fileID: 1078264095}
+    - target: {fileID: 114263501497917848, guid: c06580c4658a841a0a33921faaf1d1ea,
+        type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c06580c4658a841a0a33921faaf1d1ea, type: 2}
   m_IsPrefabParent: 0

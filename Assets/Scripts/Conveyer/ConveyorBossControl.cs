@@ -8,7 +8,7 @@ public class ConveyorBossControl : MonoBehaviour {
 	public ConveyorController conveyor;
 	public GameObject[] obPreFabs;
 	public GameObject[] playerFabs;
-	public float speed = 6;
+	public float speed = 8;
 	public int frameDelay = 100;
 	private int BossPNum = 2;
 	private Obstacle currentObstacle;
@@ -16,7 +16,6 @@ public class ConveyorBossControl : MonoBehaviour {
     public Text text;
 	public List<GameObject> players;
 	public System.Predicate<GameObject> isDisabled = IsEnabled;
-    private float pause = 1.0f; 
 
 	private static bool IsEnabled(GameObject obj)
 	{
@@ -85,6 +84,8 @@ public class ConveyorBossControl : MonoBehaviour {
         for (float i = seconds; i >= 0; i -= 1f)
         {
             text.text = "Time Left: " + Mathf.Round(i) + "    ";
+            if (i % 10 == 0)
+                frameDelay = 3 * frameDelay / 4;
             yield return new WaitForSeconds(1);
         }
         ChangeScene("End_Screen");
