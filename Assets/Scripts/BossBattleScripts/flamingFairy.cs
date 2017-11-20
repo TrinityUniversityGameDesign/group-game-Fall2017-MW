@@ -5,26 +5,72 @@ using UnityEngine;
 public class flamingFairy : MonoBehaviour {
 
 
-    public Color toColor;
+   // public Color toColor;
   
-    private Color ogColor;
+  //  private Color ogColor;
+
     public float time;
     SpriteRenderer fairy;
     public float track;
+    public bool flameOn;
+    public GameObject flam;
+    public bool start;
+
 	// Use this for initialization
 	void Start () {
         fairy = GetComponent<SpriteRenderer>();
-        ogColor = fairy.color; //color = (255f,255f,255f)
+       // ogColor = fairy.color; //color = (255f,255f,255f)
         time = 0.0f;
-	}
+        flam.SetActive(false);
+        flameOn = false;
+        start = true;
+    }
+
 
 
 
 	// Update is called once per frame
 	void Update () {
-        float t = Time.deltaTime;
+       // float t = Time.deltaTime;
         time += 0.01f;
+
+        if (time >= 1)
+        {
+            time = 0;
+        }
+
+        if(start == true)
+        {
+            fairy.color = Color.white;
+        }
+
+        if (flameOn == false  && start == false )
+        {
+
+            flam.layer = 0;
+            flam.SetActive(false);
+            fairy.color = Color.LerpUnclamped(Color.red, Color.white, time);
+
+        } else if(flameOn == true)
+        {
+            flam.layer = 11;
             fairy.color = Color.LerpUnclamped(Color.white, Color.red, time);
+            flam.SetActive(true);
+        }
+
+
+        // flame
+        if(fairy.color == Color.red)
+        {
+            flameOn = false;
+        }
+        if(fairy.color == Color.white)
+        {
+            flameOn = true;
+            start = false;
+        }
+        //time
+
       
     
 
