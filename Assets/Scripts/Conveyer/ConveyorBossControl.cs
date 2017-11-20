@@ -24,9 +24,12 @@ public class ConveyorBossControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		GlobalControl.AddPlayer (1);
+		GlobalControl.AddPlayer (2);
 		for (int i = 1; i <= GlobalControl.NumPlayers; i++) {
-			if (PlayerState.playerType [i] == PlayerType.CHEF) {
+			if (PlayerState.playerType != null && PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
+				Debug.Log ("Boss number is " + i);
 			} else {
 				var player = Instantiate (playerFabs [0]);
 				player.transform.position += new Vector3 (i, 0, 0);
@@ -36,7 +39,7 @@ public class ConveyorBossControl : MonoBehaviour {
 			}
 
 		}
-		//GlobalControl.AddPlayer (1);
+		//
 		//GlobalControl.AddPlayer (2);
 		currentObstacle = Instantiate (obPreFabs[Random.Range(0,obPreFabs.Length)]).GetComponent<Obstacle>();
 		currentObstacle.GetComponent<AffectedByConveyor> ().conveyor = conveyor;
@@ -49,7 +52,7 @@ public class ConveyorBossControl : MonoBehaviour {
     void Update()
     {
 		if (players.TrueForAll (isDisabled)) {
-            ChangeScene("End_Screen");
+//            //ChangeScene("End_Screen");
             Debug.Log ("Game Over");
 		}
         frameCt++;
@@ -91,9 +94,17 @@ public class ConveyorBossControl : MonoBehaviour {
         ChangeScene("End_Screen");
     }
 
-    public static void ChangeScene (string levelName)
+    public void ChangeScene (string levelName)
     {
+		
+		PlayerState.playersAlive = 0;
+		foreach(GameObject p in players) {
+			if (p.activeSelf)
+				PlayerState.playersAlive++;
+		}
         Debug.Log("Time Up");
         SceneManager.LoadScene(levelName);
     }
+
+
 }
