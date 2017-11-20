@@ -57,6 +57,7 @@ public class ConveyorBossControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+		transform.position += new Vector3(GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed, 0, 0);
 		if (players.TrueForAll (isDisabled)) {
 //            //ChangeScene("End_Screen");
             Debug.Log ("Game Over");
@@ -65,7 +66,7 @@ public class ConveyorBossControl : MonoBehaviour {
         if (currentObstacle != null)
         {
 
-            currentObstacle.transform.position += new Vector3(GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed, 0, 0);
+			currentObstacle.transform.position = transform.position;
             //Debug.Log ("Updating " + Input.GetButton ("X_P1"));
 			if (GlobalControl.GetButtonA(BossPNum))
             {
@@ -82,7 +83,7 @@ public class ConveyorBossControl : MonoBehaviour {
             {
                 currentObstacle = Instantiate(obPreFabs[Random.Range(0, obPreFabs.Length)]).GetComponent<Obstacle>();
                 currentObstacle.GetComponent<AffectedByConveyor>().conveyor = conveyor;
-                currentObstacle.transform.position = new Vector3(0, 7, 0);
+				currentObstacle.transform.position = transform.position;
                 frameCt = 0;
             }
         }
