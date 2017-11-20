@@ -26,10 +26,11 @@ public class ConveyorBossControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		GlobalControl.AddPlayer (1);
-		//GlobalControl.AddPlayer (2);
+		GlobalControl.AddPlayer (2);
 		for (int i = 1; i <= GlobalControl.NumPlayers; i++) {
-			if (PlayerState.playerType [i] == PlayerType.CHEF) {
+			if (PlayerState.playerType != null && PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
+				Debug.Log ("Boss number is " + i);
 			} else {
 				var player = Instantiate (playerFabs [0]);
 				player.transform.position += new Vector3 (i, 0, 0);
