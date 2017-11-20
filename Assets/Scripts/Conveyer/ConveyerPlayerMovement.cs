@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConveyerPlayerMovement : MonoBehaviour
 {
-	public int playerNum = 1;
+    public int playerNum = 1;
     public float speed = 4;
     private bool canMove = true;
 	private float delayDrop = 2.0f;
@@ -40,16 +40,17 @@ public class ConveyerPlayerMovement : MonoBehaviour
 		
         if (canMove)
 			transform.position += new Vector3(x,y, 0);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {	
+    {
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
-			canMove = false;
-			StartCoroutine(ObstacleTimer(stun));
+            canMove = false;
+            StartCoroutine(ObstacleTimer(stun));
         }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
         {
             Debug.Log("Hits Bottom.");
             gameObject.SetActive(false);
