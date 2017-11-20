@@ -16,6 +16,7 @@ public class ConveyorBossControl : MonoBehaviour {
     public Text text;
 	public List<GameObject> players;
 	public System.Predicate<GameObject> isDisabled = IsEnabled;
+	public Camera camera;
 
 	private static bool IsEnabled(GameObject obj)
 	{
@@ -33,9 +34,12 @@ public class ConveyorBossControl : MonoBehaviour {
 				BossPNum = i;
 				Debug.Log ("Boss number is " + i);
 			} else {
+				
 				var player = Instantiate (playerFabs [0]);
+				//playerbounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
+				player.GetComponent<ConveyerPlayerMovement> ().bounds = ConveyerPlayerMovement.OrthographicBounds(camera);
 				player.GetComponent<AffectedByConveyor> ().conveyor = GetComponent<ConveyorController> ();
 				players.Add (player);
 			}

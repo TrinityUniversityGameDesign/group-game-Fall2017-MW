@@ -9,7 +9,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     private bool canMove = true;
 	private float delayDrop = 2.0f;
     private float stun = 2.0f;
-	private Bounds bounds;
+	public Bounds bounds;
     // Use this for initialization
     void Start()
 	{
@@ -24,14 +24,15 @@ public class ConveyerPlayerMovement : MonoBehaviour
     {
 		var x = (GlobalControl.GetHorizontal (playerNum) * 0.05f * speed);
 		var y = (GlobalControl.GetVertical (playerNum) * 0.05f * speed);
-		/*if (transform.position.x + x > bounds.max.x) {
-			Debug.Log ("Clamping x!");
-			x = Mathf.Clamp (x, 0, int.MaxValue);
+		if (transform.position.x + x > bounds.max.x) {
+			Debug.Log ("Clamping "+transform.position.x+" into "+bounds.max.x);
+			x = Mathf.Clamp (x, int.MinValue,0);
 		}
 		else if(transform.position.x + x < bounds.min.x)
-			x = Mathf.Clamp (x, int.MinValue,0);
+			x = Mathf.Clamp (x, 0, int.MaxValue);
 
-		if (transform.position.y + y > bounds.max.y) {
+
+		/*if (transform.position.y + y > bounds.max.y) {
 			Debug.Log ("Clamping y!");
 			y = Mathf.Clamp (y, 0, int.MaxValue);
 		}
