@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168092313359834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 9.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,15 +52,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a123f9963bf549dcaddd990bef83432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conveyor: {fileID: 0}
+  conveyor: {fileID: 114382144949212838}
   obPreFabs:
   - {fileID: 1607747394174204, guid: de6fd9793630cd14fb7709f755d54b14, type: 2}
   - {fileID: 1731030014570130, guid: fcc1ea9bb2d75024498b850cc44b30cf, type: 2}
   playerFabs:
   - {fileID: 1240991516819456, guid: c427cbb51e0e242e2afd4c62dee1c061, type: 2}
-  speed: 6
+  - {fileID: 1954456399733582, guid: 4fa05c8cb1e785e4483497334667068a, type: 2}
+  - {fileID: 1240991516819456, guid: c427cbb51e0e242e2afd4c62dee1c061, type: 2}
+  speed: 8
   frameDelay: 100
   text: {fileID: 0}
+  players: []
+  camera: {fileID: 0}
 --- !u!114 &114382144949212838
 MonoBehaviour:
   m_ObjectHideFlags: 1

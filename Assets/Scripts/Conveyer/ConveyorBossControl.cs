@@ -25,6 +25,7 @@ public class ConveyorBossControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        int pTcount = 0;
 		if (PlayerState.playerType == null) {
 			GlobalControl.AddPlayer (1);
 			GlobalControl.AddPlayer (2);
@@ -35,7 +36,8 @@ public class ConveyorBossControl : MonoBehaviour {
 				Debug.Log ("Boss number is " + i);
 			} else {
 				
-				var player = Instantiate (playerFabs [0]);
+				var player = Instantiate (playerFabs [pTcount]);
+                pTcount++;
 				//playerbounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
