@@ -8,7 +8,24 @@ public class SetupPlayers : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
        int numPlayers =  GlobalControl.NumPlayers;
+        if (numPlayers == 0)
+        {
+            GlobalControl.AddPlayer(1);
+            GlobalControl.AddPlayer(2);
+            GameObject Boss = GameObject.Find("Boss");
+            Boss.GetComponent<knifeThrow>().playerNum = 1;
+            GameObject.Find("magic_charcoal").GetComponent<targetFairy>().num = 1;
+            GameObject.Find("Meat-Mallet-icon").GetComponent<mallet_time>().num = 1;
+            Boss.GetComponent<BossHealth>().numPlayers = 1;
+
+
+            GameObject ply = Instantiate(player);
+            ply.GetComponent<PlayerControlBossBattle>().num = 2;
+            ply.GetComponent<PlayerShootFood>().playerNum = 2;
+        }
+        else 
        for(int x = 1; x <= numPlayers; x++)
         {
             if (PlayerState.playerType[x] == PlayerType.CHEF)

@@ -16,12 +16,15 @@ public class PlayerHealth : MonoBehaviour {
 	public Text win;
 
     public Slider healthbar;
+    public BossHealth boss;
 
     // Use this for initialization
     void Start () {
         dom = Playerhealth;
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;
+        boss = GameObject.Find("Boss").GetComponent<BossHealth>();
+
 	}
 	
 	// Update is called once per frame
@@ -32,7 +35,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject && other.gameObject.layer == 11 && BossHealth.Bosshealth > 0)
+        if (gameObject && other.gameObject.layer == 11 && boss.Bosshealth > 0)
         {
             print("hit");
             Playerhealth -= 1;
