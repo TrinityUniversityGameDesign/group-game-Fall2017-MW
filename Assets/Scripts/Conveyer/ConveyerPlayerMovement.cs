@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class ConveyerPlayerMovement : MonoBehaviour
 {
-	public int playerNum = 1;
+    public int playerNum = 1;
     public float speed = 4;
     private bool canMove = true;
-    private float stun = 2.0f;
+    private float stun = 1.0f;
+    private float delayDrop = 2.0f;
 
     // Use this for initialization
     void Start()
     {
-        //GlobalControl.AddPlayer(1);
+        StartCoroutine(DropTimer(delayDrop));
     }
 
     // Update is called once per frame
     void Update()
     {
         if (canMove)
-			transform.position += new Vector3((GlobalControl.GetHorizontal(playerNum) * 0.05f * speed), (GlobalControl.GetVertical(playerNum) * 0.05f * speed), 0);
+            transform.position += new Vector3((GlobalControl.GetHorizontal(playerNum) * 0.05f * speed), (GlobalControl.GetVertical(playerNum) * 0.05f * speed), 0);
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {	
-        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
-			canMove = false;
-			StartCoroutine(ObstacleTimer(stun));
+            canMove = false;
+            StartCoroutine(ObstacleTimer(stun));
         }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
         {
             Debug.Log("Hits Bottom.");
             gameObject.SetActive(false);
@@ -43,4 +44,10 @@ public class ConveyerPlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    private IEnumerator DropTimer(float seconds)
+    {
+        gameObject.GetComponent<AffectedByConveyor>().isActive = false;
+        yield return new WaitForSeconds(seconds);
+        gameObject.GetComponent<AffectedByConveyor>().isActive = true;
+    }
 }
