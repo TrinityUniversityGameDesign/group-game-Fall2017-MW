@@ -512,6 +512,12 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1276110597}
+    - target: {fileID: 114263501497917848, guid: c06580c4658a841a0a33921faaf1d1ea,
+        type: 2}
+      propertyPath: playerFabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1291786597895752, guid: 23922b00242623543910729a08f1aa14,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c06580c4658a841a0a33921faaf1d1ea, type: 2}
   m_IsPrefabParent: 0
