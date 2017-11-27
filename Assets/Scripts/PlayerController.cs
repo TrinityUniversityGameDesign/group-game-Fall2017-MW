@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public PolygonCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
 	private GameObject boomerang;
+	private Color myColor;
 
 	void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Start () {
+		myColor = PlayerState.playerColor [playerNum];
+		if (playerNum != 1) {
+			spriteRenderer.color = myColor;
+		}
 	}
 
 	void Update () {
@@ -28,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 		float horizontal = GlobalControl.GetHorizontal(playerNum);
 		float vertical = GlobalControl.GetVertical (playerNum);
 
-		rigid2d.velocity = new Vector2 (horizontal*speed, vertical*speed);
+		rigid2d.velocity = new Vector2 (horizontal, vertical).normalized*speed;
 
 		float horizontalAim = GlobalControl.GetHorizontalAim (playerNum);
 		float verticalAim = GlobalControl.GetVerticalAim (playerNum);
@@ -48,7 +53,7 @@ public class PlayerController : MonoBehaviour {
 		if (spriteRenderer == null) {
 			Debug.Log ("null renderer");
 		}
-		spriteRenderer.color = Color.red;
+		spriteRenderer.color = Color.yellow;
 		controller.GetHolder (this.gameObject);
 		boomerang = controller.gameObject;
 		boomerang.SetActive (false);
@@ -67,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 	private void ThrowBoomerang() {
 		if (boomerang != null) {
 			boomerang.transform.position = transform.position + transform.right.normalized*0.6f + transform.up.normalized*0.3f;
-			spriteRenderer.color = Color.white;
+			spriteRenderer.color = myColor;
 			boomerang.SetActive (true);
 
 			boomerang.GetComponent<BoomerangController> ().Throw (transform.up + 0.45f* transform.right);

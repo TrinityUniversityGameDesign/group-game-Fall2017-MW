@@ -7,8 +7,10 @@ public class HotPotatoManager : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public GameObject boomerangPrefab;
+	public ArenaController arena;
 
-	public int countdown = 0;
+	public int countdown;
+	public int playersLeft;
 
 	private AudioSource aud;
 	private GameObject[] players = new GameObject[5];
@@ -24,7 +26,7 @@ public class HotPotatoManager : MonoBehaviour {
 
 		for (int i=1; i<=GlobalControl.NumPlayers; ++i) {
 			isAlive [i] = true;
-			GameObject player = Instantiate (playerPrefab, new Vector3 (Random.Range (-18f, 18f), Random.Range (-18f, 18f), 0), Quaternion.identity);
+			GameObject player = Instantiate (playerPrefab, new Vector3 (Random.Range (-2f,2f), Random.Range (-18f, 18f), 0), Quaternion.identity);
 			player.GetComponent<PlayerController> ().playerNum = i;
 			players [i] = player;
 			// in case of 10000 players
@@ -35,8 +37,14 @@ public class HotPotatoManager : MonoBehaviour {
 		if (boomerang == null) {
 			Debug.Log ("null 1");
 		}
-		players [1].GetComponent<PlayerController>().GetBoomerang (boomerang);
+		//players [1].GetComponent<PlayerController>().GetBoomerang (boomerang);
+
 		//boomerang.lastHolder = players [1].GetComponent<PlayerController> ();
+		//ArenaController.Arena.SetupArena (playersLeft);
+		Debug.Log ("call everything");
+
+		CheckNumPlayers();
+		StartNewRound();
 	}
 	
 	void Update () {
@@ -56,6 +64,8 @@ public class HotPotatoManager : MonoBehaviour {
 	}
 
 	void StartNewRound() {
+		Debug.Log ("start new round");
+		arena.SetupArena (playersLeft);
 		countdown = 0;
 		aud.Play ();
         aud.pitch = 1;
@@ -82,14 +92,7 @@ public class HotPotatoManager : MonoBehaviour {
 		Destroy (players [deadPlayerIndex]);
 		isAlive [deadPlayerIndex] = false;
 
-		int playersLeft = 0;
-		int chefIndex = 0;
-		for (int i = 1; i != 5; i++) {
-			if (isAlive [i]) {
-				playersLeft += 1;
-				chefIndex = i;
-			}
-		}
+		int chefIndex = CheckNumPlayers ();
 
 		if (playersLeft >= 2) {
 			StartNewRound ();
@@ -98,5 +101,19 @@ public class HotPotatoManager : MonoBehaviour {
             PlayerState.playerType[chefIndex] = PlayerType.CHEF;
             SceneManager.LoadScene("Start_Screen");
 		}
+	}
+
+	//modify playersLeft, return index of the first chef alive
+	int CheckNumPlayers() {
+		int playerCount = 0;
+		int chefIndex = 0;
+		for (int i = 1; i != 5; i++) {
+			if (isAlive [5-i]) {
+				playerCount += 1;
+				chefIndex = i;
+			}
+		}
+		playersLeft = playerCount;
+		return chefIndex;
 	}
 }
