@@ -512,13 +512,8 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1276110597}
-    - target: {fileID: 114263501497917848, guid: c06580c4658a841a0a33921faaf1d1ea,
-        type: 2}
-      propertyPath: playerFabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1291786597895752, guid: 23922b00242623543910729a08f1aa14,
-        type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 331476817730326070, guid: c06580c4658a841a0a33921faaf1d1ea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c06580c4658a841a0a33921faaf1d1ea, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1217777471
@@ -701,52 +696,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947200103}
---- !u!1 &2078978329 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1168092313359834, guid: c06580c4658a841a0a33921faaf1d1ea,
-    type: 2}
-  m_PrefabInternal: {fileID: 1078264094}
---- !u!331 &2078978330
-SpriteMask:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078978329}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d176a335d8fa34201a7883ddef5f5bf5, type: 3}
-  m_MaskAlphaCutoff: 1
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
 --- !u!1 &2080910633
 GameObject:
   m_ObjectHideFlags: 0
