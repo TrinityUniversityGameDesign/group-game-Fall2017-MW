@@ -90,10 +90,7 @@ public class mallet_time : MonoBehaviour {
             {
                 cooldown = 0;
             }
-        }
-        if (cooldown > 0 && smash == false)
-        {
-           
+
         }
 
     }
