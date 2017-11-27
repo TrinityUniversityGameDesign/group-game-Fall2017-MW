@@ -9,7 +9,7 @@ public class mallet_time : MonoBehaviour {
     public Transform target;
     public Transform ground;
     public float speed;
-    public int num;
+    public int num = 1;
     public bool smash;
     public bool flip;
     public Vector3 ogSpot;
@@ -81,6 +81,7 @@ public class mallet_time : MonoBehaviour {
         if(smash == true)
         {
             cooldown += 50;
+            num = -1;
         }
         if(smash == false)
         {
@@ -90,9 +91,11 @@ public class mallet_time : MonoBehaviour {
             {
                 cooldown = 0;
             }
-
         }
-
+        if(cooldown == 0)
+        {
+            num = 1;
+        }
     }
     }
 
