@@ -10,13 +10,21 @@ public class ConveyerPlayerMovement : MonoBehaviour
 	private float delayDrop = 2.0f;
     private float stun = 2.0f;
 	public Bounds bounds;
+
+    public AudioClip stunEffect;
+    public AudioClip fallEffect;
+    private AudioSource source;
+
     // Use this for initialization
     void Start()
 	{
-		bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
+		//bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
         //GlobalControl.AddPlayer(1);
 
 		StartCoroutine(DropTimer(delayDrop));
+
+        source = GetComponent<AudioSource>();
+  
     }
 
     // Update is called once per frame
@@ -50,11 +58,13 @@ public class ConveyerPlayerMovement : MonoBehaviour
         {
             canMove = false;
             StartCoroutine(ObstacleTimer(stun));
+            source.PlayOneShot(stunEffect, 1);
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
         {
             Debug.Log("Hits Bottom.");
             gameObject.SetActive(false);
+            source.PlayOneShot(fallEffect, 1);
         }
     }
 
