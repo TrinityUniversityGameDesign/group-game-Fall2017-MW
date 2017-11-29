@@ -57,6 +57,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
             canMove = false;
+            GameObject.Destroy(other.gameObject); //maybe change
             StartCoroutine(ObstacleTimer(stun));
             source.PlayOneShot(stunEffect, 1);
         }
