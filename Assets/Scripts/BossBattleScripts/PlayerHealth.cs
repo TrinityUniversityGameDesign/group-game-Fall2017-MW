@@ -24,7 +24,6 @@ public class PlayerHealth : MonoBehaviour {
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;
         boss = GameObject.Find("Boss").GetComponent<BossHealth>();
-
 	}
 	
 	// Update is called once per frame

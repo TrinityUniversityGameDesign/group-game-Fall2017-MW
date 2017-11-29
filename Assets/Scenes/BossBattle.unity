@@ -566,7 +566,7 @@ Prefab:
     - target: {fileID: 224550511884031224, guid: 5851caf8ec6bbb74bbb4789193c14105,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224450141571674646, guid: 5851caf8ec6bbb74bbb4789193c14105,
         type: 2}
@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthImg: {fileID: 21300000, guid: 2d835e524e7bde245b048df52391bd8b, type: 3}
   numPlayers: 0
+  Bosshealth: 100
   win: {fileID: 58744659}
   timeDelay: 300
   healthbar: {fileID: 1587796668}
