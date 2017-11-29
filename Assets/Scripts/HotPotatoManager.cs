@@ -23,7 +23,6 @@ public class HotPotatoManager : MonoBehaviour {
 
 	void Start () {
 
-     //   poof = GetComponent< >
 		aud = GetComponent<AudioSource> ();
 
 		for (int i=1; i<=GlobalControl.NumPlayers; ++i) {
@@ -40,12 +39,8 @@ public class HotPotatoManager : MonoBehaviour {
 		if (boomerang == null) {
 			Debug.Log ("null 1");
 		}
-		//players [1].GetComponent<PlayerController>().GetBoomerang (boomerang);
 
 		endTime = 2000 + Mathf.RoundToInt((Random.value * 100)) - 50;
-		//boomerang.lastHolder = players [1].GetComponent<PlayerController> ();
-		//ArenaController.Arena.SetupArena (playersLeft);
-		Debug.Log ("call everything");
 
 		CheckNumPlayers();
 		StartNewRound();
@@ -73,16 +68,17 @@ public class HotPotatoManager : MonoBehaviour {
 	}
 
 	void StartNewRound() {
-		Debug.Log ("start new round");
 		arena.SetupArena (playersLeft);
 		countdown = 0;
 		endTime = 2000 + Mathf.RoundToInt((Random.value * 100)) - 50;
 		aud.Play ();
         aud.pitch = 1;
+		bool noOwner = true;
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [i]) {
-				players [i].GetComponent<PlayerController>().GetBoomerang (boomerang);
-				break;
+				if (noOwner)
+					players [i].GetComponent<PlayerController>().GetBoomerang (boomerang);
+				players [i].transform.position = new Vector3 (0f, 0f, 0f);
 			}
 		}
 	}
