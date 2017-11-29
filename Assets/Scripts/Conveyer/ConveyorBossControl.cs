@@ -17,14 +17,17 @@ public class ConveyorBossControl : MonoBehaviour {
 	public List<GameObject> players;
 	public System.Predicate<GameObject> isDisabled = IsEnabled;
 	public Camera camera;
+	private Bounds bounds;
 
 	private static bool IsEnabled(GameObject obj)
 	{
 		return !obj.activeSelf;
+
 	}
 
     // Use this for initialization
     void Start () {
+		bounds = ConveyerPlayerMovement.OrthographicBounds(camera);
         int pTcount = 0;
 		if (PlayerState.playerType == null) {
 			GlobalControl.AddPlayer (1);
@@ -59,7 +62,15 @@ public class ConveyorBossControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		transform.position += new Vector3(GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed, 0, 0);
+		var x = GlobalControl.GetHorizontal(BossPNum) * 0.05f * speed;
+		if (transform.position.x + x > bounds.max.x) {
+			Debug.Log ("Clamping "+transform.position.x+" into "+bounds.max.x);
+			x = Mathf.Clamp (x, int.MinValue,0);
+		}
+		else if(transform.position.x + x < bounds.min.x)
+			x = Mathf.Clamp (x, 0, int.MaxValue);
+		transform.position += new Vector3(x, 0, 0);
+		
 		if (players.TrueForAll (isDisabled)) {
 //            //ChangeScene("End_Screen");
             Debug.Log ("Game Over");

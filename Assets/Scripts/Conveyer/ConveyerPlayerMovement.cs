@@ -18,7 +18,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
-		bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
+		//bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
         //GlobalControl.AddPlayer(1);
 
 		StartCoroutine(DropTimer(delayDrop));
@@ -57,6 +57,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
         {
             canMove = false;
+            GameObject.Destroy(other.gameObject); //maybe change
             StartCoroutine(ObstacleTimer(stun));
             source.PlayOneShot(stunEffect, 1);
         }
