@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class mallet_time : MonoBehaviour {
 
@@ -14,6 +15,10 @@ public class mallet_time : MonoBehaviour {
     public bool flip;
     public Vector3 ogSpot;
     public float cooldown;
+    public Slider CDBAR;
+    public float cvalue = 500f;
+
+
 
    void Start()
     {
@@ -21,6 +26,7 @@ public class mallet_time : MonoBehaviour {
         smash = false;
         ogSpot = transform.position;
         flip = false;
+        CDBAR.value = cooldowntimer();
     }
 
 
@@ -80,7 +86,7 @@ public class mallet_time : MonoBehaviour {
         }
         if(smash == true)
         {
-            cooldown = 500;
+            cooldown = cvalue;
         }
         if(smash == false)
         {
@@ -91,11 +97,13 @@ public class mallet_time : MonoBehaviour {
                 cooldown = 0;
             }
         }
-        if(cooldown == 500)
-        {
-            
-        }
-
+        CDBAR.value = cooldowntimer();
     }
+
+    float cooldowntimer()
+    {
+        return cooldown;
+    }
+
     }
 
