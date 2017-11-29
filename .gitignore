@@ -17,10 +17,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
-.vs
-.vs/
-/.vs/
-storage.ide
+
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -82,3 +79,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.vs/group-game-Fall2017-MW/v15/sqlite3/storage.ide

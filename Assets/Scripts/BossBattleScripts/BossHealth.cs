@@ -8,7 +8,7 @@ public class BossHealth : MonoBehaviour
 {
     public Sprite healthImg;
 
-    public static float Bosshealth = 50;
+    public static float Bosshealth = 500;
 
     float dom;
     
