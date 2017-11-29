@@ -44,7 +44,7 @@ public class BoomerangController : MonoBehaviour {
 
 	public void Throw(Vector3 upDirection) {
 		Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, true);
-		Debug.Log ("set intheair true");
+		Debug.Log ("set inTheAir true");
 		transform.up = upDirection;
 		inTheAir = true;
 		StartCoroutine(BackToLastHolder ());

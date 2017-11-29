@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rigid2d;
 	public PolygonCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
-	private GameObject boomerang;
+	private GameObject boomerang = null;
 	private Color myColor;
 
 	void Awake() {
@@ -48,20 +48,19 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public void GetBoomerang(BoomerangController controller) {
+	public void GetBoomerang(BoomerangController bController) {
+		Debug.Log (name + " GetBoomerang");
 		holding = true;
-		if (spriteRenderer == null) {
-			Debug.Log ("null renderer");
-		}
 		spriteRenderer.color = Color.yellow;
-		controller.GetHolder (this.gameObject);
-		boomerang = controller.gameObject;
+		bController.GetHolder (this.gameObject);
+		boomerang = bController.gameObject;
 		boomerang.SetActive (false);
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		switch (collider.tag) {
 		case "Boomerang": 
+			Debug.Log ("collide with boomerang");
 			GetBoomerang (collider.gameObject.GetComponent<BoomerangController>());
 			break;
 		default:

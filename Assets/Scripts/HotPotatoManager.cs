@@ -33,12 +33,9 @@ public class HotPotatoManager : MonoBehaviour {
 			// in case of 10000 players
 		}
 
-		GameObject boomerangObject = Instantiate (boomerangPrefab, Vector3.zero, Quaternion.identity);
+		GameObject boomerangObject = Instantiate (boomerangPrefab, new Vector3(100f,100f,0f), Quaternion.identity);
 		boomerang = boomerangObject.GetComponent<BoomerangController> ();
         boomerang.man = this;
-		if (boomerang == null) {
-			Debug.Log ("null 1");
-		}
 
 		endTime = 2000 + Mathf.RoundToInt((Random.value * 100)) - 50;
 
@@ -76,8 +73,11 @@ public class HotPotatoManager : MonoBehaviour {
 		bool noOwner = true;
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [i]) {
-				if (noOwner)
-					players [i].GetComponent<PlayerController>().GetBoomerang (boomerang);
+				if (noOwner) {
+					players [i].GetComponent<PlayerController> ().GetBoomerang (boomerang);
+					noOwner = false;
+				}
+					
 				players [i].transform.position = new Vector3 (0f, 0f, 0f);
 			}
 		}
@@ -121,7 +121,7 @@ public class HotPotatoManager : MonoBehaviour {
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [5-i]) {
 				playerCount += 1;
-				chefIndex = i;
+				chefIndex = 5-i;
 			}
 		}
 		playersLeft = playerCount;

@@ -8,7 +8,6 @@ public class ArenaController : MonoBehaviour {
 	private Vector2[] points;
 
 	void Awake() {
-		Debug.Log ("arena awake");
 		edgeCollider = GetComponent<EdgeCollider2D> ();
 		points = new Vector2[62];
 	}
@@ -23,9 +22,7 @@ public class ArenaController : MonoBehaviour {
 	}
 
 	public void SetupArena(int numPlayers) {
-
-		Debug.Log ("setup for " + numPlayers);
-
+		
 		float r = (float)numPlayers * 2.5f + 10f;
 		float pi = Mathf.PI;
 
