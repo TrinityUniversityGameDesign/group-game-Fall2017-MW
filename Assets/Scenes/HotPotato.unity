@@ -780,8 +780,8 @@ MonoBehaviour:
   boomerangPrefab: {fileID: 1447475732584416, guid: 1b435fa41a1e21e46a8d3346fa7dfacb,
     type: 2}
   arena: {fileID: 1068867864}
-  countdown: 0
   playersLeft: 0
+  countdown: 0
   PoofController: {fileID: 0}
 --- !u!1 &2106710634
 GameObject:
