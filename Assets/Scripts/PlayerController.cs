@@ -23,9 +23,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Start () {
 		myColor = PlayerState.playerColor [playerNum];
-		if (playerNum != 1) {
+		if (spriteRenderer.color != Color.yellow) 
 			spriteRenderer.color = myColor;
-		}
 	}
 
 	void Update () {

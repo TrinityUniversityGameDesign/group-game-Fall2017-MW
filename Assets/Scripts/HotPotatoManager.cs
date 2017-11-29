@@ -73,14 +73,15 @@ public class HotPotatoManager : MonoBehaviour {
 		bool noOwner = true;
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [i]) {
-				if (noOwner) {
-					players [i].GetComponent<PlayerController> ().GetBoomerang (boomerang);
-					noOwner = false;
-				}
-					
 				players [i].transform.position = new Vector3 (0f, 0f, 0f);
 			}
 		}
+		int rand = Random.Range (1, 4);
+		while (!isAlive [rand]) {
+			rand = Random.Range (1, 4);
+		}
+		players [rand].GetComponent<PlayerController> ().GetBoomerang (boomerang);
+
 	}
 
     public void playerCatch()
