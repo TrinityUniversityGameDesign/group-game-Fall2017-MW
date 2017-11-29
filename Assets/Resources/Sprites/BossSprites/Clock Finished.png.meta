@@ -1,9 +1,73 @@
 fileFormatVersion: 2
 guid: 4a9e8d90c9f792342830b59695357409
-timeCreated: 1510607430
+timeCreated: 1511990730
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Clock Finished_0
+    21300002: Clock Finished_1
+    21300004: Clock Finished_2
+    21300006: Clock Finished_3
+    21300008: Clock Finished_4
+    21300010: Clock Finished_5
+    21300012: Clock Finished_6
+    21300014: Clock Finished_7
+    21300016: Clock Finished_8
+    21300018: Clock Finished_9
+    21300020: Clock Finished_10
+    21300022: Clock Finished_11
+    21300024: Clock Finished_12
+    21300026: Clock Finished_13
+    21300028: Clock Finished_14
+    21300030: Clock Finished_15
+    21300032: Clock Finished_16
+    21300034: Clock Finished_17
+    21300036: Clock Finished_18
+    21300038: Clock Finished_19
+    21300040: Clock Finished_20
+    21300042: Clock Finished_21
+    21300044: Clock Finished_22
+    21300046: Clock Finished_23
+    21300048: Clock Finished_24
+    21300050: Clock Finished_25
+    21300052: Clock Finished_26
+    21300054: Clock Finished_27
+    21300056: Clock Finished_28
+    21300058: Clock Finished_29
+    21300060: Clock Finished_30
+    21300062: Clock Finished_31
+    21300064: Clock Finished_32
+    21300066: Clock Finished_33
+    21300068: Clock Finished_34
+    21300070: Clock Finished_35
+    21300072: Clock Finished_36
+    21300074: Clock Finished_37
+    21300076: Clock Finished_38
+    21300078: Clock Finished_39
+    21300080: Clock Finished_40
+    21300082: Clock Finished_41
+    21300084: Clock Finished_42
+    21300086: Clock Finished_43
+    21300088: Clock Finished_44
+    21300090: Clock Finished_45
+    21300092: Clock Finished_46
+    21300094: Clock Finished_47
+    21300096: Clock Finished_48
+    21300098: Clock Finished_49
+    21300100: Clock Finished_50
+    21300102: Clock Finished_51
+    21300104: Clock Finished_52
+    21300106: Clock Finished_53
+    21300108: Clock Finished_54
+    21300110: Clock Finished_55
+    21300112: Clock Finished_56
+    21300114: Clock Finished_57
+    21300116: Clock Finished_58
+    21300118: Clock Finished_59
+    21300120: Clock Finished_60
+    21300122: Clock Finished_61
+    21300124: Clock Finished_62
+    21300126: Clock Finished_63
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,7 +103,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,9 +127,913 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Clock Finished_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_1
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_2
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_3
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_4
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_5
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_6
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_7
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 2201
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_8
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_9
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_10
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_11
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_12
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_13
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_14
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_15
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 1901
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_16
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_17
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_18
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_19
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_20
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_21
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_22
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_23
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 1601
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_24
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_25
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_26
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_27
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_28
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_29
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_30
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_31
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 1301
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_32
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_33
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_34
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_35
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_36
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_37
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_38
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_39
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 1001
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_40
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_41
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_42
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_43
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_44
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_45
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_46
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_47
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 701
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_48
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_49
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_50
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_51
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_52
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_53
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_54
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_55
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 401
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_56
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_57
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_58
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_59
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_60
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_61
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_62
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock Finished_63
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 101
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

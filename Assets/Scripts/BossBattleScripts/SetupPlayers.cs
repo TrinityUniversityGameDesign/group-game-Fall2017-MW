@@ -25,7 +25,7 @@ public class SetupPlayers : MonoBehaviour {
             ply.GetComponent<PlayerControlBossBattle>().num = 2;
             ply.GetComponent<PlayerShootFood>().playerNum = 2;
         }
-        else 
+        else  
        for(int x = 1; x <= numPlayers; x++)
         {
             if (PlayerState.playerType[x] == PlayerType.CHEF)

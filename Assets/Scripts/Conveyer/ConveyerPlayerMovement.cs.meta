@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 4565322cf1b1d4da48e022be8e9b57ac
-timeCreated: 1509078051
+timeCreated: 1511817809
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stunEffect: {fileID: 8300000, guid: a1c14d65f47ce1d41b201d3f1fd1ce57, type: 3}
+  - fallEffect: {fileID: 8300000, guid: b72ed2de39be2a84b8b4c43a8a7de16c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
