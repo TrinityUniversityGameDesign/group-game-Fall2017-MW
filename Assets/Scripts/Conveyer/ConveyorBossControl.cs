@@ -106,7 +106,8 @@ public class ConveyorBossControl : MonoBehaviour {
     {
         for (float i = seconds; i >= 0; i -= 1f)
         {
-            text.text = "Time Left: " + Mathf.Round(i) + "    ";
+            if (text != null)
+             text.text = "Time Left: " + Mathf.Round(i) + "    ";
             if (i % 10 == 0)
                 frameDelay = 3 * frameDelay / 4;
             yield return new WaitForSeconds(1);

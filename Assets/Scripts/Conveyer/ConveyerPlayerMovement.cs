@@ -5,19 +5,23 @@ using UnityEngine;
 public class ConveyerPlayerMovement : MonoBehaviour
 {
     public int playerNum = 1;
-    public float speed = 4;
-    private bool canMove = true;
+    public float baseSpeed = 4;
+    
+    public bool canMove = true;
 	private float delayDrop = 2.0f;
-    private float stun = 2.0f;
+    public float stun = 2.0f;
 	public Bounds bounds;
 
     public AudioClip stunEffect;
     public AudioClip fallEffect;
-    private AudioSource source;
+    public AudioSource source;
+
+    public float mvSpeed;
 
     // Use this for initialization
     void Start()
 	{
+        mvSpeed = baseSpeed;
 		//bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
         //GlobalControl.AddPlayer(1);
 
@@ -30,8 +34,8 @@ public class ConveyerPlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		var x = (GlobalControl.GetHorizontal (playerNum) * 0.05f * speed);
-		var y = (GlobalControl.GetVertical (playerNum) * 0.05f * speed);
+		var x = (GlobalControl.GetHorizontal (playerNum) * 0.05f * mvSpeed);
+		var y = (GlobalControl.GetVertical (playerNum) * 0.05f * mvSpeed);
 		if (transform.position.x + x > bounds.max.x) {
 			Debug.Log ("Clamping "+transform.position.x+" into "+bounds.max.x);
 			x = Mathf.Clamp (x, int.MinValue,0);
@@ -54,11 +58,17 @@ public class ConveyerPlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") && canMove == true)
+        Debug.Log("collision with obs");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") )//&& canMove == true)
         {
-            canMove = false;
+            Debug.Log("collision with obs");
+            //canMove = false;
+            /*mvSpeed = baseSpeed / 10;
             StartCoroutine(ObstacleTimer(stun));
-            source.PlayOneShot(stunEffect, 1);
+            source.PlayOneShot(stunEffect, 1);*/
+            var obs = other.GetComponent<Obstacle>();
+            if (obs != null)
+                obs.collision(this);
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
         {
@@ -86,10 +96,11 @@ public class ConveyerPlayerMovement : MonoBehaviour
 		return new Bounds(new Vector3(x, y, 0), new Vector3(width, height, 0));
 	}
 
-    private IEnumerator ObstacleTimer(float seconds)
+    public IEnumerator ObstacleTimer(float seconds)
     {
-        canMove = false;
+        //canMove = false;
         yield return new WaitForSeconds(seconds);
+        mvSpeed = baseSpeed;
         canMove = true;
     }
 
