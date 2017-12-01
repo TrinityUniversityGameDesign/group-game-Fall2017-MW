@@ -24,7 +24,7 @@ public class Game_Start_UI : MonoBehaviour {
         //transform.Translate(0f, speed, 0f);
         if(text.position.x < Screen.width + 50)
         {
-            transform.position = new Vector3(text.position.x + 20, spos.y, spos.z);
+            transform.position = new Vector3(text.position.x + 15, spos.y, spos.z);
         }
         else
         {
