@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HotPotatoManager : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public GameObject boomerangPrefab;
 	public ArenaController arena;
+	public Text countdownText;
 
 	public int playersLeft;
 	public int countdown = 0;
     private int playerCountdown = 0;
 	private int endTime;
+
+	private Vector3[] positions = {
+		Vector3.zero,
+		new Vector3 (-5f, 5f, 0),
+		new Vector3 (5f, 5f, 0),
+		new Vector3 (-5f, -5f, 0),
+		new Vector3 (5f, -5f, 0)
+	};
 
 	private AudioSource aud;
 	private GameObject[] players = new GameObject[5];
@@ -27,7 +37,7 @@ public class HotPotatoManager : MonoBehaviour {
 
 		for (int i=1; i<=GlobalControl.NumPlayers; ++i) {
 			isAlive [i] = true;
-			GameObject player = Instantiate (playerPrefab, new Vector3 (Random.Range (-2f,2f), Random.Range (-18f, 18f), 0), Quaternion.identity);
+			GameObject player = Instantiate (playerPrefab, Vector3.zero, Quaternion.identity);
 			player.GetComponent<PlayerController> ().playerNum = i;
 			players [i] = player;
 			// in case of 10000 players
@@ -37,16 +47,10 @@ public class HotPotatoManager : MonoBehaviour {
 		boomerang = boomerangObject.GetComponent<BoomerangController> ();
         boomerang.man = this;
 
-		endTime = 2000 + Mathf.RoundToInt((Random.value * 100)) - 50;
-
 		CheckNumPlayers();
 		StartNewRound();
 	}
-	
-	void Update () {
-		
 
-	}
 	void FixedUpdate() {
 		countdown++;
         playerCountdown++;
@@ -65,15 +69,16 @@ public class HotPotatoManager : MonoBehaviour {
 	}
 
 	void StartNewRound() {
+		StartCoroutine (Countdown ());
 		arena.SetupArena (playersLeft);
 		countdown = 0;
-		endTime = 2000 + Mathf.RoundToInt((Random.value * 100)) - 50;
+		endTime = 2500 + Mathf.RoundToInt((Random.value * 100)) - 50;
 		aud.Play ();
         aud.pitch = 1;
 		bool noOwner = true;
 		for (int i = 1; i != 5; i++) {
 			if (isAlive [i]) {
-				players [i].transform.position = new Vector3 (0f, 0f, 0f);
+				players [i].transform.position = positions[i];
 			}
 		}
 		int rand = Random.Range (1, 4);
@@ -128,4 +133,36 @@ public class HotPotatoManager : MonoBehaviour {
 		playersLeft = playerCount;
 		return chefIndex;
 	}
+
+	IEnumerator Countdown() {
+
+		foreach (GameObject p in players) {
+			if (p != null) {
+			PlayerController c = p.GetComponent<PlayerController> ();
+			c.hasControl = false;
+			}	
+		}
+
+		countdownText.text = "3";
+		yield return new WaitForSeconds (1f);
+		countdownText.text = "2";
+		yield return new WaitForSeconds (1f);
+		countdownText.text = "1";
+		yield return new WaitForSeconds (1f);
+		countdownText.text = "GO!";
+
+
+		foreach (GameObject p in players) {
+			if (p != null) {
+				PlayerController c = p.GetComponent<PlayerController> ();
+				c.hasControl = true;
+			}	
+		}
+
+		yield return new WaitForSeconds (0.5f);
+		countdownText.text = "";
+		playerCountdown = 0;
+
+	}
+
 }

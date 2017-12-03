@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float rotatingSpeed;
 	public bool holding;
+	public bool hasControl = false;
 
 	private Rigidbody2D rigid2d;
-	public PolygonCollider2D myCollider;
+	public CircleCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
 	private GameObject boomerang = null;
 	private Color myColor;
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		rigid2d = GetComponent<Rigidbody2D> ();
-		myCollider = GetComponent<PolygonCollider2D> ();
+		myCollider = GetComponent<CircleCollider2D> ();
 	}
 
 	void Start () {
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 
+		if (!hasControl)
+			return;
+		
 		float horizontal = GlobalControl.GetHorizontal(playerNum);
 		float vertical = GlobalControl.GetVertical (playerNum);
 
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void ThrowBoomerang() {
 		if (boomerang != null) {
-			boomerang.transform.position = transform.position + transform.right.normalized*0.6f + transform.up.normalized*0.3f;
+			boomerang.transform.position = transform.position + transform.right.normalized*1.25f + transform.up.normalized*1.25f;
 			spriteRenderer.color = myColor;
 			boomerang.SetActive (true);
 

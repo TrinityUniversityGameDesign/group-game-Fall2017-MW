@@ -6,6 +6,7 @@ public class ArenaController : MonoBehaviour {
 
 	private EdgeCollider2D edgeCollider;
 	private Vector2[] points;
+	public GameObject plate;
 
 	void Awake() {
 		edgeCollider = GetComponent<EdgeCollider2D> ();
@@ -22,8 +23,9 @@ public class ArenaController : MonoBehaviour {
 	}
 
 	public void SetupArena(int numPlayers) {
-		
-		float r = (float)numPlayers * 2.5f + 10f;
+		plate.transform.localScale = new Vector3 (4.95f + (numPlayers - 2f) * 0.475f, 4.95f + (numPlayers - 2f) * 0.475f, 1f);
+		plate.transform.position = new Vector3 (2.6f + (numPlayers - 2f) * .265f, 0, 1f);
+		float r = (float)numPlayers * 1.25f + 10f;
 		float pi = Mathf.PI;
 
 		for (int i = 0; i != 62; i++) {
