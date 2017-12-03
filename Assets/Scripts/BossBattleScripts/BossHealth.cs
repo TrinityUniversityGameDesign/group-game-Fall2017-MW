@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour
 {
     public Sprite healthImg;
-
-    public static float Bosshealth = 500;
-
+    public int numPlayers;
+    public float Bosshealth = 100f;
     float dom;
     
 
@@ -23,7 +22,7 @@ public class BossHealth : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Bosshealth = 50;
+        Bosshealth = Bosshealth * numPlayers;
         dom = Bosshealth;
         healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
@@ -42,7 +41,7 @@ public class BossHealth : MonoBehaviour
 				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 			}
         }
-        if (deadPlayers >= 3)
+        if (deadPlayers >= numPlayers)
         {
             win.GetComponent<Text>().enabled = true;
             win.text = "Boss Win";
