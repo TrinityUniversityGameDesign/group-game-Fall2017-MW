@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95201231354165034}
   - component: {fileID: 114730483377219216}
   - component: {fileID: 50141249721392298}
-  - component: {fileID: 61895142847930260}
+  - component: {fileID: 58011670537910154}
   m_Layer: 8
   m_Name: BasicConveyorPlayer
   m_TagString: Untagged
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61895142847930260
-BoxCollider2D:
+--- !u!58 &58011670537910154
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -74,22 +74,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.036033273, y: 0.25223255}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.2, y: 5.4}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.11750156, y: 0.06266785}
   serializedVersion: 2
-  m_Size: {x: 2.5156653, y: 1.1480756}
-  m_EdgeRadius: 0
+  m_Radius: 0.6105687
 --- !u!95 &95201231354165034
 Animator:
   serializedVersion: 3
@@ -119,10 +109,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  speed: 4
+  baseSpeed: 4
+  canMove: 1
+  stun: 2
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  stunEffect: {fileID: 0}
+  fallEffect: {fileID: 0}
+  source: {fileID: 0}
+  mvSpeed: 0
 --- !u!114 &114730483377219216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +141,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -160,6 +157,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

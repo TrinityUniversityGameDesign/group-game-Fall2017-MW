@@ -6,8 +6,16 @@ public class Obstacle : MonoBehaviour {
 
     private bool isActive = false;
 
-	// Use this for initialization
-	void Start () {
+    public delegate void OnCollide(ConveyerPlayerMovement player);
+    public event OnCollide onCollide;
+
+    public void collision(ConveyerPlayerMovement player)
+    {
+        if (onCollide != null)
+            onCollide(player);
+    }
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 61503905978219086}
   - component: {fileID: 114026643860102412}
   - component: {fileID: 114958382269840804}
+  - component: {fileID: 114481967436316974}
+  - component: {fileID: 95186816277461164}
   m_Layer: 9
   m_Name: ObstacleSquare
   m_TagString: Untagged
@@ -68,6 +70,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9459145, y: 1.5554605}
   m_EdgeRadius: 0
+--- !u!95 &95186816277461164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731030014570130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df92640a87879414aa51ec1608c20756, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114026643860102412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,6 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0243602596b33e149bb919778fa3f840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114481967436316974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731030014570130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafd5673a9dff8f41b6b8d51968f9377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressesToFree: 5
+  frozenCount: 0
+  baseObs: {fileID: 0}
 --- !u!114 &114958382269840804
 MonoBehaviour:
   m_ObjectHideFlags: 1
