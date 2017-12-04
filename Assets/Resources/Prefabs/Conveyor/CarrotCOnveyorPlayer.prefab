@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95761204201349318}
   - component: {fileID: 114460891979121354}
   - component: {fileID: 50783664837498140}
-  - component: {fileID: 61968079553492792}
+  - component: {fileID: 58736424338010706}
   m_Layer: 8
   m_Name: CarrotCOnveyorPlayer
   m_TagString: Untagged
@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954456399733582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.054, y: -0.397, z: -5}
+  m_LocalScale: {x: 0.67229015, y: 0.67229015, z: 0.67229015}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61968079553492792
-BoxCollider2D:
+--- !u!58 &58736424338010706
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -74,22 +74,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.036033273, y: 0.25223255}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.2, y: 5.4}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.0589599, y: 0.09599228}
   serializedVersion: 2
-  m_Size: {x: 2.5156653, y: 1.1480756}
-  m_EdgeRadius: 0
+  m_Radius: 0.9248782
 --- !u!95 &95761204201349318
 Animator:
   serializedVersion: 3
@@ -119,10 +109,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  speed: 4
+  baseSpeed: 4
+  canMove: 1
+  stun: 2
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  stunEffect: {fileID: 0}
+  fallEffect: {fileID: 0}
+  source: {fileID: 0}
+  mvSpeed: 0
 --- !u!114 &114460891979121354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 58a8f104b2bf8f645bf394db7e61e8d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f0ce822e176e844bb9d1077496b50e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
