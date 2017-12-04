@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class HotPotatoManager : MonoBehaviour {
 
 	public GameObject playerPrefab;
+	public GameObject carrotPrefab;
+	public GameObject strawberryPrefab;
+	public GameObject sausagePrefab;
+	public GameObject applePrefab;
 	public GameObject boomerangPrefab;
 	public ArenaController arena;
 	public Text countdownText;
@@ -100,13 +104,42 @@ public class HotPotatoManager : MonoBehaviour {
 		players[deadPlayerIndex].GetComponent<PlayerController>().isDead = true;
         players[deadPlayerIndex].GetComponent<SpriteRenderer>().color = Color.white;
         players[deadPlayerIndex].GetComponent<Animator>().SetBool("isDead", true);
+		playerDeath (deadPlayerIndex);
         StartCoroutine(FinishElimination(deadPlayerIndex));
     }
 
 
+	void playerDeath(int num) {
+		GameObject deadFood = null;
+		switch (PlayerState.playerType [num]) {
+
+		case PlayerType.CARROT:
+			deadFood = carrotPrefab;
+			break;
+
+		case PlayerType.STRAWBERRY:
+			deadFood = strawberryPrefab;
+			break;
+
+		case PlayerType.SAUSAGE:
+			deadFood = sausagePrefab;
+			break;
+
+		case PlayerType.APPLE:
+			deadFood = applePrefab;
+			break;
+
+		default:
+			Debug.Log ("bad death prefab");
+			break;
+		}
+		deadFood = Instantiate (deadFood, new Vector3(players [num].transform.position.x,players[num].transform.position.y, 0.5f), Quaternion.identity); //TODO: make this delete
+		deadFood.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,600f));
+	}
+
     IEnumerator FinishElimination(int deadPlayerIndex)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
 		Destroy (players [deadPlayerIndex]);
 		isAlive [deadPlayerIndex] = false;
 

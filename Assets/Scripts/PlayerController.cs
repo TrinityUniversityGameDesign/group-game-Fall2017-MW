@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void GetBoomerang(BoomerangController bController) {
-		Debug.Log (name + " GetBoomerang");
 		holding = true;
 		if(!isDead) spriteRenderer.color = Color.yellow;
 		bController.GetHolder (this.gameObject);
@@ -64,7 +63,6 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider) {
 		switch (collider.tag) {
 		case "Boomerang": 
-			Debug.Log ("collide with boomerang");
 			GetBoomerang (collider.gameObject.GetComponent<BoomerangController>());
 			break;
 		default:

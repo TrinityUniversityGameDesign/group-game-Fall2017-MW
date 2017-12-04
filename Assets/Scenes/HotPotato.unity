@@ -556,6 +556,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1188579093983500, guid: 486f79fc7c94af442961d18474a0e99f,
     type: 2}
+  carrotPrefab: {fileID: 1735517282841358, guid: 606be8830c0b2d9479cc53f010cd57e6,
+    type: 2}
+  strawberryPrefab: {fileID: 1549481213615758, guid: f48b474acfc93954894613b737e45820,
+    type: 2}
+  sausagePrefab: {fileID: 1684458231179528, guid: d8573098c58f20e4c9c7c15b34ade451,
+    type: 2}
+  applePrefab: {fileID: 1367512329847624, guid: 94773229ec7f6074ab0d4aed4bf2baf9,
+    type: 2}
   boomerangPrefab: {fileID: 1447475732584416, guid: 1b435fa41a1e21e46a8d3346fa7dfacb,
     type: 2}
   arena: {fileID: 1068867864}
