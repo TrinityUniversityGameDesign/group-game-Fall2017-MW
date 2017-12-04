@@ -49,11 +49,13 @@ public class flamingFairy : MonoBehaviour {
 
             flam.layer = 0;
             flam.SetActive(false);
+            gameObject.layer = 0;
             fairy.color = Color.LerpUnclamped(Color.red, Color.white, time);
 
         } else if(flameOn == true)
         {
             flam.layer = 11;
+            gameObject.layer = 11;
             fairy.color = Color.LerpUnclamped(Color.white, Color.red, time);
             flam.SetActive(true);
         }
