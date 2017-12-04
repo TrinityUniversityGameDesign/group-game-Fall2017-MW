@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4419546185879794}
   - component: {fileID: 212133930276407336}
-  - component: {fileID: 61435196297342348}
   - component: {fileID: 114114129570798840}
   - component: {fileID: 114848588156287156}
+  - component: {fileID: 114808740592076348}
+  - component: {fileID: 70079911520816712}
   m_Layer: 9
   m_Name: ObstacleLong
   m_TagString: Untagged
@@ -37,14 +38,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607747394174204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.57, y: 2.31, z: 0}
+  m_LocalPosition: {x: -12.167448, y: 7.642102, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61435196297342348
-BoxCollider2D:
+--- !u!70 &70079911520816712
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -55,19 +56,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0010749102, y: 0.23631501}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 8}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2769835, y: 1.8668926}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.021431772, y: 0.3000847}
+  m_Size: {x: 4.7848687, y: 1.9984087}
+  m_Direction: 1
 --- !u!114 &114114129570798840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,6 +70,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0243602596b33e149bb919778fa3f840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114808740592076348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607747394174204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809260b945a08854eabb3cb397d10c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseObs: {fileID: 0}
 --- !u!114 &114848588156287156
 MonoBehaviour:
   m_ObjectHideFlags: 1
