@@ -30,10 +30,14 @@ public class StickyObstacle : MonoBehaviour {
 	void Update () {
         if (p != null && !p.canMove)
         {
-            if (GlobalControl.GetButtonDownA(p.playerNum))
-            {
-                frozenCount--;
-            }
+			if (GlobalControl.GetButtonDownA (p.playerNum)) {
+				GetComponent<Animator> ().SetBool ("Apressed", true);
+
+				frozenCount--;
+			} else {
+				GetComponent<Animator> ().SetBool ("Apressed", false);
+			}
+				
             if (frozenCount <= 0)
             {
                 

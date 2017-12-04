@@ -72,7 +72,7 @@ public class ConveyorBossControl : MonoBehaviour {
 		transform.position += new Vector3(x, 0, 0);
 		
 		if (players.TrueForAll (isDisabled)) {
-//            //ChangeScene("End_Screen");
+            ChangeScene("End_Screen");
             Debug.Log ("Game Over");
 		}
         frameCt++;
