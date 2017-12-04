@@ -104,7 +104,7 @@ public class mallet_time : MonoBehaviour {
 
     float cooldowntimer()
     {
-        return cooldown;
+        return cooldown / cvalue;
 
     }
 
