@@ -8,12 +8,14 @@ public class BoomerangController : MonoBehaviour {
 	public float trackingRotatingSpeed;
 	public float flyingSpeed;
 	public PlayerController lastHolder;
+    public PlayerController temp;
 	public float delay;
 
 	private bool trackingBack;
 	private bool inTheAir;
 	private Rigidbody2D rigid2d;
-	private PolygonCollider2D myCollider; 
+	private PolygonCollider2D myCollider;
+    public HotPotatoManager man;
 
 	void Awake() {
 		myCollider = GetComponent<PolygonCollider2D> ();
@@ -35,14 +37,11 @@ public class BoomerangController : MonoBehaviour {
 				transform.Rotate (new Vector3 (0f, 0f, throwingRotatingSpeed * Time.deltaTime));
 				rigid2d.velocity = transform.up * flyingSpeed;
 			}
-		} else {
-			Debug.Log ("not in the air");
-		}
+		} 
 	}
 
 	public void Throw(Vector3 upDirection) {
 		Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, true);
-		Debug.Log ("set intheair true");
 		transform.up = upDirection;
 		inTheAir = true;
 		StartCoroutine(BackToLastHolder ());
@@ -51,7 +50,6 @@ public class BoomerangController : MonoBehaviour {
 
 	IEnumerator BackToLastHolder() {
 		yield return new WaitForSeconds (delay);
-		Debug.Log ("ignore false 1");
 		Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, false);
 		if (inTheAir) {
 			trackingBack = true;
@@ -63,15 +61,17 @@ public class BoomerangController : MonoBehaviour {
 		inTheAir = false;
 		trackingBack = false;
 		lastHolder = player.GetComponent<PlayerController> ();
-		Debug.Log ("ignore true ");
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		Debug.Log ("Collide with " + collider.name);
 		if (collider.tag == "Player") {
-			Debug.Log ("ignore false 2");
+            temp = lastHolder;
 			Physics2D.IgnoreCollision (myCollider, lastHolder.myCollider, false);
 			GetHolder (collider.gameObject);
+            if (temp != lastHolder)
+            {
+                man.playerCatch();
+            }
 		}
 	}
 }
