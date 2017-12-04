@@ -36,7 +36,7 @@ public class PlayerControlBossBattle : MonoBehaviour {
         {
             animator.SetBool("isJumping", false);
         }else animator.SetBool("isJumping", true);
-        animator.SetFloat("speed", theRigidBody.velocity.x);
+        animator.SetFloat("speed", Mathf.Abs(theRigidBody.velocity.x));
 
         if(theRigidBody.velocity.x < 0)
         {
