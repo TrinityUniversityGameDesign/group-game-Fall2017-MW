@@ -97,6 +97,7 @@ public class HotPotatoManager : MonoBehaviour {
 
     void Elimination() {
         int deadPlayerIndex = boomerang.lastHolder.playerNum;
+		players[deadPlayerIndex].GetComponent<PlayerController>().isDead = true;
         players[deadPlayerIndex].GetComponent<SpriteRenderer>().color = Color.white;
         players[deadPlayerIndex].GetComponent<Animator>().SetBool("isDead", true);
         StartCoroutine(FinishElimination(deadPlayerIndex));
@@ -138,8 +139,9 @@ public class HotPotatoManager : MonoBehaviour {
 
 		foreach (GameObject p in players) {
 			if (p != null) {
-			PlayerController c = p.GetComponent<PlayerController> ();
-			c.hasControl = false;
+				PlayerController c = p.GetComponent<PlayerController> ();
+				c.rigid2d.velocity = Vector2.zero;
+				c.hasControl = false;
 			}	
 		}
 
@@ -155,6 +157,7 @@ public class HotPotatoManager : MonoBehaviour {
 		foreach (GameObject p in players) {
 			if (p != null) {
 				PlayerController c = p.GetComponent<PlayerController> ();
+
 				c.hasControl = true;
 			}	
 		}

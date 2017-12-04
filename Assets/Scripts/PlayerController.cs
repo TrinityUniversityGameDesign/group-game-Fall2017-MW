@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour {
 	public float rotatingSpeed;
 	public bool holding;
 	public bool hasControl = false;
+	public bool isDead = false;
 
-	private Rigidbody2D rigid2d;
+	public Rigidbody2D rigid2d;
 	public CircleCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
 	private GameObject boomerang = null;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 
-		if (!hasControl)
+		if (!hasControl || isDead)
 			return;
 		
 		float horizontal = GlobalControl.GetHorizontal(playerNum);
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 	public void GetBoomerang(BoomerangController bController) {
 		Debug.Log (name + " GetBoomerang");
 		holding = true;
-		spriteRenderer.color = Color.yellow;
+		if(!isDead) spriteRenderer.color = Color.yellow;
 		bController.GetHolder (this.gameObject);
 		boomerang = bController.gameObject;
 		boomerang.SetActive (false);
