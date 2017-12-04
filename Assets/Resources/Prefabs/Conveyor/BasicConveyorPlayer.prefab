@@ -115,8 +115,8 @@ MonoBehaviour:
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  stunEffect: {fileID: 0}
-  fallEffect: {fileID: 0}
+  stunEffect: {fileID: 8300000, guid: a1c14d65f47ce1d41b201d3f1fd1ce57, type: 3}
+  fallEffect: {fileID: 8300000, guid: b72ed2de39be2a84b8b4c43a8a7de16c, type: 3}
   source: {fileID: 0}
   mvSpeed: 0
 --- !u!114 &114730483377219216
@@ -141,7 +141,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -157,7 +156,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
