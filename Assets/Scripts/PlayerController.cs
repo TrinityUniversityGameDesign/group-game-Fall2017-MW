@@ -8,27 +8,36 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float rotatingSpeed;
 	public bool holding;
+	public bool hasControl = false;
+	public bool isDead = false;
 
-	private Rigidbody2D rigid2d;
-	public PolygonCollider2D myCollider;
+	public Rigidbody2D rigid2d;
+	public CircleCollider2D myCollider;
 	private SpriteRenderer spriteRenderer;
-	private GameObject boomerang;
+	private GameObject boomerang = null;
+	private Color myColor;
 
 	void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		rigid2d = GetComponent<Rigidbody2D> ();
-		myCollider = GetComponent<PolygonCollider2D> ();
+		myCollider = GetComponent<CircleCollider2D> ();
 	}
 
 	void Start () {
+		myColor = PlayerState.playerColor [playerNum];
+		if (spriteRenderer.color != Color.yellow) 
+			spriteRenderer.color = myColor;
 	}
 
 	void Update () {
 
+		if (!hasControl || isDead)
+			return;
+		
 		float horizontal = GlobalControl.GetHorizontal(playerNum);
 		float vertical = GlobalControl.GetVertical (playerNum);
 
-		rigid2d.velocity = new Vector2 (horizontal*speed, vertical*speed);
+		rigid2d.velocity = new Vector2 (horizontal, vertical).normalized*speed;
 
 		float horizontalAim = GlobalControl.GetHorizontalAim (playerNum);
 		float verticalAim = GlobalControl.GetVerticalAim (playerNum);
@@ -43,14 +52,11 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public void GetBoomerang(BoomerangController controller) {
+	public void GetBoomerang(BoomerangController bController) {
 		holding = true;
-		if (spriteRenderer == null) {
-			Debug.Log ("null renderer");
-		}
-		spriteRenderer.color = Color.red;
-		controller.GetHolder (this.gameObject);
-		boomerang = controller.gameObject;
+		if(!isDead) spriteRenderer.color = Color.yellow;
+		bController.GetHolder (this.gameObject);
+		boomerang = bController.gameObject;
 		boomerang.SetActive (false);
 	}
 
@@ -66,8 +72,8 @@ public class PlayerController : MonoBehaviour {
 
 	private void ThrowBoomerang() {
 		if (boomerang != null) {
-			boomerang.transform.position = transform.position + transform.right.normalized*0.6f + transform.up.normalized*0.3f;
-			spriteRenderer.color = Color.white;
+			boomerang.transform.position = transform.position + transform.right.normalized*1.25f + transform.up.normalized*1.25f;
+			spriteRenderer.color = myColor;
 			boomerang.SetActive (true);
 
 			boomerang.GetComponent<BoomerangController> ().Throw (transform.up + 0.45f* transform.right);

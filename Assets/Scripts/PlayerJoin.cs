@@ -51,7 +51,7 @@ public class PlayerJoin : MonoBehaviour {
 
         if (GlobalControl.NumPlayers > 1)
         {
-            startText.text = "Player 1 Press Start to Begin";
+            startText.text = "Player 1 Press Start";
             if(GlobalControl.GetButtonDownStart(1))
             {
                 PlayerState.playerType = new PlayerType[5];

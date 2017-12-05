@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50536539379734818}
   - component: {fileID: 60642936924311752}
   - component: {fileID: 95442227987502138}
+  - component: {fileID: 58782885387813836}
   m_Layer: 0
   m_Name: HotPotatoPlayer
   m_TagString: Player
@@ -66,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188579093983500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.867, y: 1.656, z: 0}
-  m_LocalScale: {x: 2.6717656, y: 1.8487475, z: 1}
+  m_LocalPosition: {x: -16.360743, y: -9.515046, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4385583279591326}
   m_Father: {fileID: 0}
@@ -91,10 +92,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &60642936924311752
-PolygonCollider2D:
+--- !u!58 &58782885387813836
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -105,16 +106,31 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+  m_Offset: {x: -0.17, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!60 &60642936924311752
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1188579093983500}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 7.2, y: 5.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Points:
     m_Paths:
     - - {x: 0, y: 0.5}
@@ -152,6 +168,9 @@ MonoBehaviour:
   speed: 15
   rotatingSpeed: 100
   holding: 0
+  hasControl: 0
+  isDead: 0
+  rigid2d: {fileID: 0}
   myCollider: {fileID: 0}
 --- !u!212 &212631707314957784
 SpriteRenderer:
@@ -185,7 +204,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 87810b6d33985e447ac0ff342dd44892, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d15bcb67477021c4eba23400e2fd9d5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
