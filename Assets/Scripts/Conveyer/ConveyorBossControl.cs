@@ -42,6 +42,7 @@ public class ConveyorBossControl : MonoBehaviour {
 				var player = Instantiate (playerFabs [pTcount]);
                 pTcount++;
 				//playerbounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
+				//TODO: set player based on PlayerState
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
 				player.GetComponent<ConveyerPlayerMovement> ().bounds = ConveyerPlayerMovement.OrthographicBounds(camera);
