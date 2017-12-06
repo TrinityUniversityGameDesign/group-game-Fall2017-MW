@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 70128485493747504}
   - component: {fileID: 95395295162352312}
   m_Layer: 12
-  m_Name: Player
+  m_Name: sausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
