@@ -24,7 +24,7 @@ public class SetupPlayers : MonoBehaviour {
             Boss.GetComponent<BossHealth>().numPlayers = 1;
 
 
-            GameObject ply = Instantiate(sausagePrefab);
+            GameObject ply = Instantiate(carrotPrefab);
             ply.GetComponent<PlayerControlBossBattle>().num = 2;
             ply.GetComponent<PlayerShootFood>().playerNum = 2;
         }
