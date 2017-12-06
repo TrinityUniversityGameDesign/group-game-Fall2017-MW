@@ -82,7 +82,7 @@ public class ConveyorBossControl : MonoBehaviour {
 
 			currentObstacle.transform.position = transform.position;
             //Debug.Log ("Updating " + Input.GetButton ("X_P1"));
-			if (GlobalControl.GetButtonA(BossPNum))
+			if (GlobalControl.GetButtonA(BossPNum) || Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Pressed");
                 currentObstacle.GetComponent<Obstacle>().setActive(conveyor);
