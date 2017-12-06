@@ -71,11 +71,6 @@ public class flamingFairy : MonoBehaviour {
             flameOn = true;
             start = false;
         }
-        //time
-
-      
-    
-
-       // fairy.color = new Color(255f, 255f-t, 255f-t);
+       
 	}
 }
