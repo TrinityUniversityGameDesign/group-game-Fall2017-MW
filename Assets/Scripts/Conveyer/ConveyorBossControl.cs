@@ -110,7 +110,7 @@ public class ConveyorBossControl : MonoBehaviour {
             if (text != null)
              text.text = "Time Left: " + Mathf.Round(i) + "    ";
             if (i % 10 == 0)
-                frameDelay = 3 * frameDelay / 4;
+                frameDelay = 7 * frameDelay / 8;
             yield return new WaitForSeconds(1);
         }
         ChangeScene("End_Screen");
