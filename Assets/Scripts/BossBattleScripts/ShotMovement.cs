@@ -17,7 +17,7 @@ public class ShotMovement : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject && other.gameObject.layer == 11)
+        if (gameObject && other.gameObject.layer == 11 || gameObject && other.gameObject.layer == 0)
         {
             gameObject.SetActive(false);
         }
