@@ -1053,10 +1053,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828998090b1fb834e82a1315ba53dab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1757773651701406, guid: 99c89b82da649cf4c8c87587d9e249aa, type: 2}
-  sausagePrefab: {fileID: 0}
-  corrotPrefab: {fileID: 0}
-  StrawberryPrefab: {fileID: 0}
+  sausagePrefab: {fileID: 1757773651701406, guid: 99c89b82da649cf4c8c87587d9e249aa,
+    type: 2}
+  carrotPrefab: {fileID: 1757773651701406, guid: 3757d91c5132f0344bc013bc4026d154,
+    type: 2}
+  strawberryPrefab: {fileID: 1757773651701406, guid: b8d0005fb4217294db8de288cb689e9e,
+    type: 2}
+  applePrefab: {fileID: 0}
 --- !u!1 &906383293
 GameObject:
   m_ObjectHideFlags: 0

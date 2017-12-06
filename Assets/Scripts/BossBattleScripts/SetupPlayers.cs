@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SetupPlayers : MonoBehaviour {
     public GameObject sausagePrefab;
+    public GameObject carrotPrefab;
+    public GameObject strawberryPrefab;
+    public GameObject applePrefab;
 
 
 	// Use this for initialization
@@ -38,21 +41,25 @@ public class SetupPlayers : MonoBehaviour {
             } else
             {
                     GameObject ply;
-                if(PlayerState.playerType[x] == PlayerType.SAUSAGE)
+                    if (PlayerState.playerType[x] == PlayerType.SAUSAGE)
                     {
                         ply = Instantiate(sausagePrefab);
                     }
-                if (PlayerState.playerType[x] == PlayerType.CARROT)
+                    else if (PlayerState.playerType[x] == PlayerType.CARROT)
                     {
-                         ply = Instantiate(sausagePrefab);
+                        ply = Instantiate(carrotPrefab);
                     }
-                    if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
+                    else if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
                     {
-                        ply = Instantiate(sausagePrefab);
+                        ply = Instantiate(strawberryPrefab);
+                    }
+                    else if (PlayerState.playerType[x] == PlayerType.APPLE)
+                    {
+                        ply = Instantiate(applePrefab);
                     }
                     else ply = Instantiate(sausagePrefab);
 
-                    ply.GetComponent<PlayerControlBossBattle>().num = x;
+                ply.GetComponent<PlayerControlBossBattle>().num = x;
                 ply.GetComponent<PlayerShootFood>().playerNum = x;
             }
         } 
