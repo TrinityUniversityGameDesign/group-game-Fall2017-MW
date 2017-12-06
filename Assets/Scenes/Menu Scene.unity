@@ -121,7 +121,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4722515093547044, guid: 7d1e13ba85b844346a85f8fd738ad14b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.7170002
+      value: -3.7860003
       objectReference: {fileID: 0}
     - target: {fileID: 4722515093547044, guid: 7d1e13ba85b844346a85f8fd738ad14b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -229,7 +229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Quit
 --- !u!222 &132198650
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.28571427, b: 0.28571427, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -370,7 +370,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 499293046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1197116137}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &499293046
@@ -419,7 +430,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4331200091199386, guid: b7d09185f5aabf841b113e143fcf09ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.99
+      value: -4.059
       objectReference: {fileID: 0}
     - target: {fileID: 4331200091199386, guid: b7d09185f5aabf841b113e143fcf09ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -529,6 +540,9 @@ GameObject:
   - component: {fileID: 1051416050}
   - component: {fileID: 1051416049}
   - component: {fileID: 1051416048}
+  - component: {fileID: 1051416053}
+  - component: {fileID: 1051416052}
+  - component: {fileID: 1051416051}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -565,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1302787821}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1051416050
@@ -581,6 +595,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051416051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051416047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal_P4
+  m_VerticalAxis: Vertical_P4
+  m_SubmitButton: A_P4
+  m_CancelButton: B_P4
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1051416052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051416047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal_P3
+  m_VerticalAxis: Vertical_P3
+  m_SubmitButton: A_P3
+  m_CancelButton: B_P3
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1051416053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051416047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal_P2
+  m_VerticalAxis: Vertical_P2
+  m_SubmitButton: A_P2
+  m_CancelButton: B_P2
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1177555291
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +986,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.36332184, g: 0.32352942, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -936,7 +1004,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1302787824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1197116137}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1302787824
@@ -1146,7 +1225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Start
 --- !u!222 &1654497777
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1166,7 +1245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4046744446976506, guid: 2a74112e6dbbbbc4d882257c15d5f63e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.9670002
+      value: -4.0360003
       objectReference: {fileID: 0}
     - target: {fileID: 4046744446976506, guid: 2a74112e6dbbbbc4d882257c15d5f63e, type: 2}
       propertyPath: m_LocalPosition.z
