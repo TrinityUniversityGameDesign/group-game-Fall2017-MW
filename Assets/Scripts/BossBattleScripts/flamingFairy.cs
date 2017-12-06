@@ -76,10 +76,8 @@ public class flamingFairy : MonoBehaviour {
         if (BossHealth.isBossOneThird == true)
         {
             canMove = true;
-            flameOn = true;
         }else if(BossHealth.isBossOneThird == false)
         {
-            flameOn = false;
             canMove = false;
         }
 
