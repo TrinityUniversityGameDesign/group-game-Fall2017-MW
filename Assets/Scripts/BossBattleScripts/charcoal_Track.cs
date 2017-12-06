@@ -27,7 +27,7 @@ public class charcoal_Track : MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
-
+        /*
         if(transform.position == startPoint.position && flamingFairy.canMove == true)
         {
             target = rB;
@@ -54,6 +54,6 @@ public class charcoal_Track : MonoBehaviour {
             
             target = rT;
         }
-
+        */
 	}
 }
