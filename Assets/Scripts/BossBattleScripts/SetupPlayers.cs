@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetupPlayers : MonoBehaviour {
-    public GameObject player;
+    public GameObject sausagePrefab;
 
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class SetupPlayers : MonoBehaviour {
             Boss.GetComponent<BossHealth>().numPlayers = 1;
 
 
-            GameObject ply = Instantiate(player);
+            GameObject ply = Instantiate(sausagePrefab);
             ply.GetComponent<PlayerControlBossBattle>().num = 2;
             ply.GetComponent<PlayerShootFood>().playerNum = 2;
         }
@@ -37,8 +37,22 @@ public class SetupPlayers : MonoBehaviour {
                 Boss.GetComponent<BossHealth>().numPlayers = numPlayers -1;
             } else
             {
-                GameObject ply = Instantiate(player);
-                ply.GetComponent<PlayerControlBossBattle>().num = x;
+                    GameObject ply;
+                if(PlayerState.playerType[x] == PlayerType.SAUSAGE)
+                    {
+                        ply = Instantiate(sausagePrefab);
+                    }
+                if (PlayerState.playerType[x] == PlayerType.CARROT)
+                    {
+                         ply = Instantiate(sausagePrefab);
+                    }
+                    if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
+                    {
+                        ply = Instantiate(sausagePrefab);
+                    }
+                    else ply = Instantiate(sausagePrefab);
+
+                    ply.GetComponent<PlayerControlBossBattle>().num = x;
                 ply.GetComponent<PlayerShootFood>().playerNum = x;
             }
         } 
