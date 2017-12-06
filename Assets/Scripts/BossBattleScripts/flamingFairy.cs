@@ -15,6 +15,7 @@ public class flamingFairy : MonoBehaviour {
     public bool flameOn;
     public GameObject flam;
     public bool start;
+    public static bool canMove = false;
 
 	// Use this for initialization
 	void Start () {
@@ -52,7 +53,7 @@ public class flamingFairy : MonoBehaviour {
             gameObject.layer = 0;
             fairy.color = Color.LerpUnclamped(Color.red, Color.white, time);
 
-        } else if(flameOn == true)
+        } else if(flameOn == true && canMove == true)
         {
             flam.layer = 11;
             gameObject.layer = 11;
@@ -71,6 +72,18 @@ public class flamingFairy : MonoBehaviour {
             flameOn = true;
             start = false;
         }
+
+        if (BossHealth.isBossOneThird == true)
+        {
+            canMove = true;
+            flameOn = true;
+        }else if(BossHealth.isBossOneThird == false)
+        {
+            flameOn = false;
+            canMove = false;
+        }
+
+
         //time
 
       
