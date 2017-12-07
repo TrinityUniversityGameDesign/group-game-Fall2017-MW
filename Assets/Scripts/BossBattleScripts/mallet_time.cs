@@ -104,6 +104,7 @@ public class mallet_time : MonoBehaviour {
         {
             canMove = true;
         }
+        else { canMove = false; }
 
         if (canMove == false)
         {
