@@ -42,10 +42,10 @@ public class PlayerControlBossBattle : MonoBehaviour {
 
         if(theRigidBody.velocity.x < 0)
         {
-            sR.flipX = false;
+            sR.flipX = true;
         }else
         {
-            sR.flipX = true;
+            sR.flipX = false;
         }
 
     }
