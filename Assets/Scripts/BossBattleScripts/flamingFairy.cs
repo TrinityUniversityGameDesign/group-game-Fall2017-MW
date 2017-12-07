@@ -84,6 +84,7 @@ public class flamingFairy : MonoBehaviour
         }
         else if (BossHealth.isBossOneThird == false)
         {
+            Debug.Log("should be true");
             canMove = false;
         }
 
