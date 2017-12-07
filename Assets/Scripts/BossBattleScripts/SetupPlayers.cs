@@ -19,7 +19,7 @@ public class SetupPlayers : MonoBehaviour {
             GlobalControl.AddPlayer(2);
             GameObject Boss = GameObject.Find("Boss");
             Boss.GetComponent<knifeThrow>().playerNum = 1;
-            GameObject.Find("magic_charcoal").GetComponent<targetFairy>().num = 1;
+            GameObject.Find("fairy").GetComponent<targetFairy>().num = 1;
             GameObject.Find("Meat-Mallet-icon").GetComponent<mallet_time>().num = 1;
             Boss.GetComponent<BossHealth>().numPlayers = 1;
 
@@ -35,7 +35,7 @@ public class SetupPlayers : MonoBehaviour {
             {
                 GameObject Boss = GameObject.Find("Boss");
                 Boss.GetComponent<knifeThrow>().playerNum = x;
-                GameObject.Find("magic_charcoal").GetComponent<targetFairy>().num = x;
+                GameObject.Find("fairy").GetComponent<targetFairy>().num = x;
                 GameObject.Find("Meat-Mallet-icon").GetComponent<mallet_time>().num = x;
                 Boss.GetComponent<BossHealth>().numPlayers = numPlayers -1;
             } else
