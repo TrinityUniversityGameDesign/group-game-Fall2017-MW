@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             print("hit");
             Playerhealth -= 1;
+            audioSource.Play();
             print(Playerhealth);
             if(Playerhealth <= 0)
             {
@@ -57,7 +58,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             print("hit");
             Playerhealth -= 1;
-            audioSource.PlayOneShot(hit);
+            audioSource.Play();
             print(Playerhealth);
             if (Playerhealth <= 0)
             {
