@@ -65,6 +65,7 @@ public class BossHealth : MonoBehaviour
 
         if(Bosshealth <= ogHealth * .40)
         {
+            Debug.Log("true");
             isBossOneThird = true;
         }
 

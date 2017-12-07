@@ -508,7 +508,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218352076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5da86800aabaacf40adecd8ab86b837e, type: 3}
   m_Name: 
@@ -518,7 +518,7 @@ MonoBehaviour:
   lB: {fileID: 1106947252}
   rT: {fileID: 1228728080}
   rB: {fileID: 906383294}
-  startPoint: {fileID: 0}
+  startPoint: {fileID: 2146695556}
 --- !u!114 &218352080
 MonoBehaviour:
   m_ObjectHideFlags: 0
