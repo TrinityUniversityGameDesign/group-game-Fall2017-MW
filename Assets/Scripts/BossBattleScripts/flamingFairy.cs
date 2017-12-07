@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flamingFairy : MonoBehaviour
-{
+public class flamingFairy : MonoBehaviour {
 
 
-    // public Color toColor;
-
-    //  private Color ogColor;
+   // public Color toColor;
+  
+  //  private Color ogColor;
 
     public float time;
     SpriteRenderer fairy;
@@ -16,27 +15,23 @@ public class flamingFairy : MonoBehaviour
     public bool flameOn;
     public GameObject flam;
     public bool start;
-    public static bool canMove = false;
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
         fairy = GetComponent<SpriteRenderer>();
-        // ogColor = fairy.color; //color = (255f,255f,255f)
+       // ogColor = fairy.color; //color = (255f,255f,255f)
         time = 0.0f;
         flam.SetActive(false);
         flameOn = false;
         start = true;
-        canMove = false;
     }
 
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        // float t = Time.deltaTime;
+	// Update is called once per frame
+	void Update () {
+       // float t = Time.deltaTime;
         time += 0.01f;
 
         if (time >= 1)
@@ -44,12 +39,12 @@ public class flamingFairy : MonoBehaviour
             time = 0;
         }
 
-        if (start == true)
+        if(start == true)
         {
             fairy.color = Color.white;
         }
 
-        if (flameOn == false && start == false)
+        if (flameOn == false  && start == false )
         {
 
             flam.layer = 0;
@@ -57,8 +52,7 @@ public class flamingFairy : MonoBehaviour
             gameObject.layer = 0;
             fairy.color = Color.LerpUnclamped(Color.red, Color.white, time);
 
-        }
-        else if (flameOn == true && canMove == true)
+        } else if(flameOn == true)
         {
             flam.layer = 11;
             gameObject.layer = 11;
@@ -68,11 +62,11 @@ public class flamingFairy : MonoBehaviour
 
 
         // flame
-        if (fairy.color == Color.red)
+        if(fairy.color == Color.red)
         {
             flameOn = false;
         }
-        if (fairy.color == Color.white)
+        if(fairy.color == Color.white)
         {
             flameOn = true;
             start = false;
