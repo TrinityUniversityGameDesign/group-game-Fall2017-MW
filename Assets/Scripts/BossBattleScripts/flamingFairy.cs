@@ -15,6 +15,7 @@ public class flamingFairy : MonoBehaviour {
     public bool flameOn;
     public GameObject flam;
     public bool start;
+    public static bool canMove = false;
 
 	// Use this for initialization
 	void Start () {
