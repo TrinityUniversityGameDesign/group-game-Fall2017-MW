@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbed335ff590646e987f7be15b5bf617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 1643478906199118, guid: 1db556fa22ff0ef428d4bf40364ee5d2, type: 2}
+  food: {fileID: 1643478906199118, guid: 425031cd21b0c6a4491fadbbaaa4b923, type: 2}
   delay: 0.2
   playerNum: 2
   pooledAmt: 20

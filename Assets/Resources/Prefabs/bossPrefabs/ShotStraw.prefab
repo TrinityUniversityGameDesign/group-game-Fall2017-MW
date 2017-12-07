@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114540768744891316}
   - component: {fileID: 61072831370075536}
   m_Layer: 12
-  m_Name: pizza
+  m_Name: ShotStraw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643478906199118}
-  m_LocalRotation: {x: -0.008217855, y: -0.006840452, z: 0.91243756, w: 0.40907627}
-  m_LocalPosition: {x: -0.978, y: -0.901, z: -0.01}
+  m_LocalRotation: {x: -0.005196187, y: -0.009344762, z: 0.703376, w: 0.7107376}
+  m_LocalPosition: {x: 15.643505, y: -0.6599216, z: -0.01}
   m_LocalScale: {x: 0.070639074, y: 0.113687284, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.33, y: -1.18, z: -588.3}
+  m_LocalEulerAnglesHint: {x: 0.33, y: -1.18, z: -630.6}
 --- !u!50 &50436139124049392
 Rigidbody2D:
   serializedVersion: 4
@@ -76,18 +76,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14216495, y: -0.18740052}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.77, y: 3.97}
+    oldSize: {x: 7.2, y: 5.4}
     newSize: {x: 8, y: 1.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.77, y: 3.97}
+  m_Size: {x: 2.2357793, y: 3.5229712}
   m_EdgeRadius: 0
 --- !u!114 &114224967141503122
 MonoBehaviour:
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f444648571b6ebe44920c96b0dbbfebc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 743a5500043055a4f83fddeae353cf28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
