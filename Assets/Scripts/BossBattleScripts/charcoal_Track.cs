@@ -12,8 +12,6 @@ public class charcoal_Track : MonoBehaviour {
     public Transform startPoint;
     private Transform target;
 
-
-
     // Use this for initialization
     void Start () {
         //  Vector3 ogPos = transform.position;
