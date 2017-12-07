@@ -30,6 +30,7 @@ public class SetupPlayers : MonoBehaviour {
         else  
        for(int x = 1; x <= numPlayers; x++)
         {
+                Debug.Log(PlayerState.playerType[x]);
             if (PlayerState.playerType[x] == PlayerType.CHEF)
             {
                 GameObject Boss = GameObject.Find("Boss");
@@ -43,20 +44,17 @@ public class SetupPlayers : MonoBehaviour {
                     if (PlayerState.playerType[x] == PlayerType.SAUSAGE)
                     {
                         ply = Instantiate(sausagePrefab);
-                    }
-                    else if (PlayerState.playerType[x] == PlayerType.CARROT)
+                    }else if (PlayerState.playerType[x] == PlayerType.CARROT)
                     {
                         ply = Instantiate(carrotPrefab);
-                    }
-                    else if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
+
+                    }else if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
                     {
                         ply = Instantiate(strawberryPrefab);
-                    }
-                    else if (PlayerState.playerType[x] == PlayerType.APPLE)
+                    }else if (PlayerState.playerType[x] == PlayerType.APPLE)
                     {
                         ply = Instantiate(applePrefab);
-                    }
-                    else ply = Instantiate(sausagePrefab);
+                    }else ply = Instantiate(strawberryPrefab);
 
                 ply.GetComponent<PlayerControlBossBattle>().num = x;
                 ply.GetComponent<PlayerShootFood>().playerNum = x;

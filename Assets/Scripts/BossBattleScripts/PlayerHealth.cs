@@ -18,12 +18,16 @@ public class PlayerHealth : MonoBehaviour {
     public Slider healthbar;
     public BossHealth boss;
 
+    public AudioClip hit;
+    AudioSource audioSource;
+
     // Use this for initialization
     void Start () {
         dom = Playerhealth;
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;
         boss = GameObject.Find("Boss").GetComponent<BossHealth>();
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -53,6 +57,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             print("hit");
             Playerhealth -= 1;
+            audioSource.PlayOneShot(hit);
             print(Playerhealth);
             if (Playerhealth <= 0)
             {
