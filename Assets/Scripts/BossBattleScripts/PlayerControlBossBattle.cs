@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControlBossBattle : MonoBehaviour {
 	private Rigidbody2D theRigidBody;
+    private SpriteRenderer sR;
     private Animator animator;
 	public float speed = 10;
     public int num;
@@ -12,6 +13,7 @@ public class PlayerControlBossBattle : MonoBehaviour {
 	void Start () {
         
 		theRigidBody = GetComponent<Rigidbody2D> ();
+        sR = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 	}
 	
@@ -40,10 +42,10 @@ public class PlayerControlBossBattle : MonoBehaviour {
 
         if(theRigidBody.velocity.x < 0)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),transform.localScale.y, transform.localScale.z);
+            sR.flipX = false;
         }else
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            sR.flipX = true;
         }
 
     }
