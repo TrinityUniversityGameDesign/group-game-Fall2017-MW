@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndToMenu : MonoBehaviour {
 
-    public 
+    public string menu;
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class EndToMenu : MonoBehaviour {
     public void StartGame()
     {
         print("Start Pushed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(menu);
     }
 
     // Update is called once per frame
