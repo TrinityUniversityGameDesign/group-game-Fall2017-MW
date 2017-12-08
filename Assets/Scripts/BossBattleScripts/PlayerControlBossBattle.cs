@@ -8,6 +8,7 @@ public class PlayerControlBossBattle : MonoBehaviour {
     private Animator animator;
 	public float speed = 10;
     public int num;
+    private bool onFridge = false; 
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +35,11 @@ public class PlayerControlBossBattle : MonoBehaviour {
 		if (jump && theRigidBody.transform.position.y < (-3.10) ) {
 			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);
 		}
-        if (transform.position.y < (-3.10))
+        if (onFridge)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        if (transform.position.y < (-3.10) || onFridge)
         {
             animator.SetBool("isJumping", false);
         }else animator.SetBool("isJumping", true);
@@ -48,5 +53,13 @@ public class PlayerControlBossBattle : MonoBehaviour {
             sR.flipX = false;
         }
 
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.name == "fridge")
+        {
+           Debug.Log("hit the fridge");
+            onFridge = true;
+        }
     }
 }

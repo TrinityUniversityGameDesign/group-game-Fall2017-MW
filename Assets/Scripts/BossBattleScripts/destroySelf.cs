@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class destroySelf : MonoBehaviour {
+    public GameObject me;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class destroySelf : MonoBehaviour {
     {
 
         yield return new WaitForSeconds(1);
-        Destroy(this);
+        Destroy(me);
     }
 
 }
