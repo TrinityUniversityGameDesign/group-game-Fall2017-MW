@@ -32,7 +32,7 @@ public class PlayerControlBossBattle : MonoBehaviour {
 		bool jump = GlobalControl.GetButtonDownA(num);
         
 
-		if (jump && theRigidBody.transform.position.y < (-3.10) ) {
+		if (jump && theRigidBody.transform.position.y < (-3.10) || jump && onFridge) {
 			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);
 		}
         if (onFridge)
@@ -51,6 +51,10 @@ public class PlayerControlBossBattle : MonoBehaviour {
         }else
         {
             sR.flipX = false;
+        }
+        if (theRigidBody.transform.position.x > -7f || theRigidBody.transform.position.y > -0.5)
+        {
+            onFridge = false;
         }
 
     }
