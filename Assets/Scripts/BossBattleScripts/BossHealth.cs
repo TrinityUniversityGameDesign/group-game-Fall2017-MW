@@ -45,7 +45,7 @@ public class BossHealth : MonoBehaviour
 			win.text = "Players Win";
 			timeDelay -= 1;
 			if (timeDelay <= 0) {
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+				SceneManager.LoadScene ("endScreen");
 			}
         }
         if (deadPlayers >= numPlayers)
@@ -55,7 +55,7 @@ public class BossHealth : MonoBehaviour
             timeDelay -= 1;
             if (timeDelay <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("food_win");
             }
         }
 
