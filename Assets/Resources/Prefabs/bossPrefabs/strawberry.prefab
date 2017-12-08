@@ -444,6 +444,8 @@ MonoBehaviour:
   Playerhealth: 7
   timeDelay: 300
   win: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105, type: 2}
+  deathObject: {fileID: 1664565666352762, guid: 0b30dc09f72ed1842ac0a3216dcdc72e,
+    type: 2}
   healthbar: {fileID: 114114885300795214}
   boss: {fileID: 0}
   hit: {fileID: 8300000, guid: c6863373bc70e8a438e46d02f2030a91, type: 3}

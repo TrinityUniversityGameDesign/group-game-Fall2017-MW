@@ -23,7 +23,7 @@ public class SetupPlayers : MonoBehaviour {
             GameObject.Find("Meat-Mallet-icon").GetComponent<mallet_time>().num = 1;
             Boss.GetComponent<BossHealth>().numPlayers = 1;
 
-            GameObject ply = Instantiate(strawberryPrefab);
+            GameObject ply = Instantiate(applePrefab);
             ply.GetComponent<PlayerControlBossBattle>().num = 2;
             ply.GetComponent<PlayerShootFood>().playerNum = 2;
         }
