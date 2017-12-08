@@ -18,7 +18,7 @@ public class EndToMenu : MonoBehaviour {
     public void StartGame()
     {
         print("Start Pushed");
-        SceneManager.LoadScene(menu);
+        SceneManager.LoadScene("MenuScene");
     }
 
     // Update is called once per frame
