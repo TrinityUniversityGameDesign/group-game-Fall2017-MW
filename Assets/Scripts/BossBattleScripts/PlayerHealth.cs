@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        int alive = PlayerState.playersAlive;
+        Playerhealth += alive;
         dom = Playerhealth;
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;
@@ -28,7 +30,8 @@ public class PlayerHealth : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         animator.SetBool("isDead", false);
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {

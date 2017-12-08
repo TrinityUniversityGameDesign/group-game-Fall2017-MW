@@ -36,6 +36,8 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         healthbar.value = healthLeft();
         if(Bosshealth <= 0)
         {
