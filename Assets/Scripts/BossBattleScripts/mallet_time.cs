@@ -81,7 +81,7 @@ public class mallet_time : MonoBehaviour {
             go_up(ogSpot, step);
         }
 
-        if (GlobalControl.GetButtonDownA(num) && cooldown <= 0)
+        if (GlobalControl.GetButtonDownX(num) && cooldown <= 0)
         {
             smash = true;
         }

@@ -31,6 +31,8 @@ public class BossHealth : MonoBehaviour
         healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
         ogHealth = Bosshealth;
+        isBossOneThird = false;
+        isBossTwoThirdsHealth = false;
     }
 
     // Update is called once per frame

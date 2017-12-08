@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
     void Start () {
         int alive = PlayerState.playersAlive;
         Playerhealth += alive;
+        Debug.Log(Playerhealth);
         dom = Playerhealth;
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;

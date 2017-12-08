@@ -1008,7 +1008,7 @@ Prefab:
     - target: {fileID: 114492283243940526, guid: b79dd4f37b7173844ab85ed483b4fe06,
         type: 2}
       propertyPath: cvalue
-      value: 500
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61331479031172274, guid: b79dd4f37b7173844ab85ed483b4fe06, type: 2}
@@ -1243,6 +1243,62 @@ Prefab:
         type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450141571674646, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450141571674646, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 653.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450141571674646, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450141571674646, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 224.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 637d5a20dce4f6a429f1065f40f3b460,
+        type: 3}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.9264706
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.87526095
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314684399646226, guid: 5851caf8ec6bbb74bbb4789193c14105,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.18393166
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5851caf8ec6bbb74bbb4789193c14105, type: 2}
@@ -2325,9 +2381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knife: {fileID: 1643478906199118, guid: 2d377c4a97cb0c4418f43c6811bb7224, type: 2}
-  delay: 2
+  delay: 1
   playerNum: 1
-  pooledAmt: 3
+  pooledAmt: 5
 --- !u!114 &1771783369
 MonoBehaviour:
   m_ObjectHideFlags: 0
