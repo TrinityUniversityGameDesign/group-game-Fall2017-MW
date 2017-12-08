@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.10258621, g: 0.875, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.25517225, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1008,6 +1008,11 @@ Prefab:
     - target: {fileID: 114492283243940526, guid: b79dd4f37b7173844ab85ed483b4fe06,
         type: 2}
       propertyPath: cvalue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114492283243940526, guid: b79dd4f37b7173844ab85ed483b4fe06,
+        type: 2}
+      propertyPath: cooldown
       value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2590,7 +2595,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 167662813}
   m_HandleRect: {fileID: 0}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
