@@ -472,11 +472,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91c1050ae2dac8048a9cc7d6326373e2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: cce262ae21d2e964d856ae62c101277a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -568,6 +568,7 @@ MonoBehaviour:
     type: 2}
   arena: {fileID: 1068867864}
   countdownText: {fileID: 283066608}
+  superSecretSong: {fileID: 8300000, guid: 91c1050ae2dac8048a9cc7d6326373e2, type: 3}
   playersLeft: 0
   countdown: 0
   PoofController: {fileID: 0}
