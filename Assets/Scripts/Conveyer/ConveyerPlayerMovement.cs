@@ -53,8 +53,10 @@ public class ConveyerPlayerMovement : MonoBehaviour
 		else if(transform.position.y + y < bounds.min.x)
 			y = Mathf.Clamp (y, int.MinValue,0);*/
 		
-        if (canMove)
-			transform.position += new Vector3(x,y, 0);
+		if (canMove) {
+			transform.position += new Vector3 (x, y, 0);
+			Debug.Log ("Moving by " + x + " " + y);
+		}
 
     }
 

@@ -25,8 +25,9 @@ GameObject:
   - component: {fileID: 114730483377219216}
   - component: {fileID: 50141249721392298}
   - component: {fileID: 58011670537910154}
+  - component: {fileID: 82059452659130744}
   m_Layer: 8
-  m_Name: BasicConveyorPlayer
+  m_Name: AppleConveyorPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,13 +39,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240991516819456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 4.47, y: 0.01, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!50 &50141249721392298
 Rigidbody2D:
   serializedVersion: 4
@@ -77,9 +78,89 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11750156, y: 0.06266785}
+  m_Offset: {x: -0.04123916, y: 0.8024138}
   serializedVersion: 2
-  m_Radius: 0.6105687
+  m_Radius: 0.89274
+--- !u!82 &82059452659130744
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240991516819456}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95201231354165034
 Animator:
   serializedVersion: 3
@@ -89,7 +170,7 @@ Animator:
   m_GameObject: {fileID: 1240991516819456}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c4bb0ea671bfc741bdd3ce6ccab451a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3f069a54afd850a4682196a752f4fb13, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -111,12 +192,12 @@ MonoBehaviour:
   playerNum: 1
   baseSpeed: 4
   canMove: 1
-  stun: 2
+  stun: 1.5
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  stunEffect: {fileID: 8300000, guid: a1c14d65f47ce1d41b201d3f1fd1ce57, type: 3}
-  fallEffect: {fileID: 8300000, guid: b72ed2de39be2a84b8b4c43a8a7de16c, type: 3}
+  stunEffect: {fileID: 8300000, guid: edcc08de0538b458c878238a9ec96085, type: 3}
+  fallEffect: {fileID: 8300000, guid: 3c4ecda44e5854168b8f3aa6aca51691, type: 3}
   source: {fileID: 0}
   mvSpeed: 0
 --- !u!114 &114730483377219216
@@ -164,7 +245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 58a8f104b2bf8f645bf394db7e61e8d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82e6391894c8d9d4bb805db5c624de77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
