@@ -15,7 +15,7 @@ public class StickyObstacle : MonoBehaviour {
         transform.position = p.transform.position+new Vector3(0,0,-1);
         //player.mvSpeed = player.baseSpeed / 10;
         //StartCoroutine(player.ObstacleTimer(player.stun));
-        // player.source.PlayOneShot(player.stunEffect, 1);
+        player.source.PlayOneShot(player.stunEffect, 1);
         p.canMove = false;
     }
     // Use this for initialization

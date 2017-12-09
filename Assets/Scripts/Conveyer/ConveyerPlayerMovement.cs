@@ -9,7 +9,7 @@ public class ConveyerPlayerMovement : MonoBehaviour
     
     public bool canMove = true;
 	private float delayDrop = 2.0f;
-    public float stun = 2.0f;
+    public float stun = 0.5f;
 	public Bounds bounds;
 
     public AudioClip stunEffect;
@@ -21,6 +21,8 @@ public class ConveyerPlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
+		source = GetComponent<AudioSource> ();
+		source.clip = fallEffect;
         mvSpeed = baseSpeed;
 		//bounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
         //GlobalControl.AddPlayer(1);
@@ -73,11 +75,14 @@ public class ConveyerPlayerMovement : MonoBehaviour
         else if (other.gameObject.layer == LayerMask.NameToLayer("ScreenBottom"))
         {
             Debug.Log("Hits Bottom.");
-            gameObject.SetActive(false);
+			Invoke ("killPlayer", 1);
             source.PlayOneShot(fallEffect, 1);
         }
     }
 
+	public void killPlayer() {
+		gameObject.SetActive(false);
+	}
 	public static Bounds OrthographicBounds (Camera camera)
 	{
 		if (!camera.orthographic)
