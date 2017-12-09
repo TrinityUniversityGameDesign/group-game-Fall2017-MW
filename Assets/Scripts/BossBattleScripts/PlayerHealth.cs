@@ -47,6 +47,21 @@ public class PlayerHealth : MonoBehaviour {
             }
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameObject && other.gameObject.layer == 11 && boss.Bosshealth > 0)
+        {
+            print("hit");
+            Playerhealth -= 1;
+            print(Playerhealth);
+            if (Playerhealth <= 0)
+            {
+                BossHealth.deadPlayers += 1;
+                healthbar.value = healthLeft();
+                gameObject.SetActive(false);
+            }
+        }
+    }
 
 
     float healthLeft()

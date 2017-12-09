@@ -8,10 +8,10 @@ public class Menu : MonoBehaviour {
 
     void Update()
     {
-        if (Input.anyKey)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+     //   if (Input.anyKey)
+      //  {
+      //      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      //  }
     }
     
 	public void StartGame () {
