@@ -267,8 +267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal_P1
   m_VerticalAxis: Vertical_P1
-  m_SubmitButton: Submit_P1
-  m_CancelButton: Cancel_P1
+  m_SubmitButton: A_P1
+  m_CancelButton: B_P1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1589597564}
+      - m_Target: {fileID: 1589597563}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1589597564}
+      - m_Target: {fileID: 1589597563}
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -792,7 +792,6 @@ GameObject:
   - component: {fileID: 1589597560}
   - component: {fileID: 1589597559}
   - component: {fileID: 1589597563}
-  - component: {fileID: 1589597564}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -883,22 +882,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589597558}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ed57a1f5c7a294b94cc6ddd17ea039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1589597564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1589597558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a416dd0d26265f041987f5461f843728, type: 3}
+  m_Script: {fileID: 11500000, guid: fcd625b89a2efbb4693f7fc49495bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: Menu Scene
 --- !u!1 &1661249402
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,9 @@ public class mallet_time : MonoBehaviour {
     public bool smash;
     public bool flip;
     public Vector3 ogSpot;
-    public float cooldown;
+    public float cooldown = 300f;
     public Slider CDBAR;
-    public float cvalue = 500f;
+    public float cvalue = 0f;
     public bool canMove = false;
 
 
@@ -29,6 +29,8 @@ public class mallet_time : MonoBehaviour {
         flip = false;
         CDBAR.value = cooldowntimer();
         canMove = false;
+        cvalue = cooldown;
+        cooldown = 300f;
     }
 
 
@@ -81,22 +83,22 @@ public class mallet_time : MonoBehaviour {
             go_up(ogSpot, step);
         }
 
-        if (GlobalControl.GetButtonDownA(num) && cooldown <= 0)
+        if (GlobalControl.GetButtonDownX(num) && cooldown >= 300)
         {
             smash = true;
         }
         if(smash == true)
         {
-            cooldown = cvalue;
+           cooldown = 0;
 
         }
         if(smash == false)
         {
-            cooldown -= 1;
+            cooldown += 1;
             
-        if( cooldown < 0)
+        if( cooldown > 300)
             {
-                cooldown = 0;
+                cooldown = 300;
             }
         }
 
@@ -104,10 +106,11 @@ public class mallet_time : MonoBehaviour {
         {
             canMove = true;
         }
+        else { canMove = false; }
 
         if (canMove == false)
         {
-            cooldown = 0;
+            cooldown = 300;
             smash = false;
         }
 
@@ -116,7 +119,7 @@ public class mallet_time : MonoBehaviour {
 
     float cooldowntimer()
     {
-        return cooldown / cvalue;
+        return cooldown/cvalue;
 
     }
 

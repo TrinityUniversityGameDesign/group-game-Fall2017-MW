@@ -25,6 +25,7 @@ public class flamingFairy : MonoBehaviour {
         flam.SetActive(false);
         flameOn = false;
         start = true;
+        canMove = false;
     }
 
 

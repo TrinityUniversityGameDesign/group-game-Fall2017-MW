@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerControlBossBattle : MonoBehaviour {
 	private Rigidbody2D theRigidBody;
+    private SpriteRenderer sR;
     private Animator animator;
+    public float jumpPower = 5;
 	public float speed = 10;
     public int num;
+    private bool onFridge = false; 
 
 	// Use this for initialization
 	void Start () {
         
 		theRigidBody = GetComponent<Rigidbody2D> ();
+        sR = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 	}
 	
@@ -29,10 +33,14 @@ public class PlayerControlBossBattle : MonoBehaviour {
 		bool jump = GlobalControl.GetButtonDownA(num);
         
 
-		if (jump && theRigidBody.transform.position.y < (-3.10) ) {
-			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, 10);
+		if (jump && theRigidBody.transform.position.y < (-3.10) || jump && onFridge) {
+			theRigidBody.velocity = new Vector2 (theRigidBody.velocity.x, jumpPower);
 		}
-        if (transform.position.y < (-3.10))
+        if (onFridge)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        if (transform.position.y < (-3.10) || onFridge)
         {
             animator.SetBool("isJumping", false);
         }else animator.SetBool("isJumping", true);
@@ -40,11 +48,23 @@ public class PlayerControlBossBattle : MonoBehaviour {
 
         if(theRigidBody.velocity.x < 0)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),transform.localScale.y, transform.localScale.z);
+            sR.flipX = true;
         }else
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            sR.flipX = false;
+        }
+        if (theRigidBody.transform.position.x > -7f || theRigidBody.transform.position.y > 0)
+        {
+            onFridge = false;
         }
 
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.name == "fridge")
+        {
+           Debug.Log("hit the fridge");
+            onFridge = true;
+        }
     }
 }

@@ -31,11 +31,15 @@ public class BossHealth : MonoBehaviour
         healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
         ogHealth = Bosshealth;
+        isBossOneThird = false;
+        isBossTwoThirdsHealth = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         healthbar.value = healthLeft();
         if(Bosshealth <= 0)
         {
@@ -43,7 +47,7 @@ public class BossHealth : MonoBehaviour
 			win.text = "Players Win";
 			timeDelay -= 1;
 			if (timeDelay <= 0) {
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+				SceneManager.LoadScene ("food_win");
 			}
         }
         if (deadPlayers >= numPlayers)
@@ -53,7 +57,8 @@ public class BossHealth : MonoBehaviour
             timeDelay -= 1;
             if (timeDelay <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
+                SceneManager.LoadScene("endScreen_boss");
             }
         }
 
