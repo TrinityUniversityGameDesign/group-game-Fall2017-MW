@@ -14,6 +14,7 @@ public class HotPotatoManager : MonoBehaviour {
 	public GameObject boomerangPrefab;
 	public ArenaController arena;
 	public Text countdownText;
+	public AudioClip superSecretSong;
 
 	public int playersLeft;
 	public int countdown = 0;
@@ -38,6 +39,7 @@ public class HotPotatoManager : MonoBehaviour {
 	void Start () {
 
 		aud = GetComponent<AudioSource> ();
+		if (PlayerState.easterEgg) aud.clip = superSecretSong;
 
 		for (int i=1; i<=GlobalControl.NumPlayers; ++i) {
 			isAlive [i] = true;
@@ -133,14 +135,16 @@ public class HotPotatoManager : MonoBehaviour {
 			Debug.Log ("bad death prefab");
 			break;
 		}
+		players [num].GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 		deadFood = Instantiate (deadFood, new Vector3(players [num].transform.position.x,players[num].transform.position.y, 0.5f), Quaternion.identity); //TODO: make this delete
 		deadFood.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,600f));
 	}
 
     IEnumerator FinishElimination(int deadPlayerIndex)
     {
-        yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds (.5f);
 		Destroy (players [deadPlayerIndex]);
+        yield return new WaitForSeconds(2.5f);
 		isAlive [deadPlayerIndex] = false;
 
 		int chefIndex = CheckNumPlayers ();
@@ -150,6 +154,7 @@ public class HotPotatoManager : MonoBehaviour {
 		} else {
             Destroy(boomerang.gameObject);
             PlayerState.playerType[chefIndex] = PlayerType.CHEF;
+			yield return new WaitForSeconds (1f);
             SceneManager.LoadScene("Start_Screen");
 		}
 	}

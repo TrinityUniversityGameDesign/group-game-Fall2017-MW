@@ -61,6 +61,16 @@ public class PlayerJoin : MonoBehaviour {
                 PlayerState.playerType[4] = PlayerType.STRAWBERRY;
                 SceneManager.LoadScene("HotPotato");
             }
+			if(GlobalControl.GetButtonDownBack(1))
+			{
+				PlayerState.easterEgg = true;
+				PlayerState.playerType = new PlayerType[5];
+				PlayerState.playerType[1] = PlayerType.APPLE;
+				PlayerState.playerType[2] = PlayerType.CARROT;
+				PlayerState.playerType[3] = PlayerType.SAUSAGE;
+				PlayerState.playerType[4] = PlayerType.STRAWBERRY;
+				SceneManager.LoadScene("HotPotato");
+			}
         }
     }
 }
