@@ -21,6 +21,7 @@ public class targetFairy : MonoBehaviour {
         float stepX = inputX * Time.deltaTime*speed;
         float stepY = inputY * Time.deltaTime*speed;
 
+        if (transform.position.x > -6.25f && inputX < 0f || transform.position.x < 9 && inputX > 0f) 
         transform.position = new Vector3(transform.position.x + stepX, transform.position.y + stepY, transform.position.z);
 	}
 }
