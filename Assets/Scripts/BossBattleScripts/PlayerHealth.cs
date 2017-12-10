@@ -8,23 +8,31 @@ public class PlayerHealth : MonoBehaviour {
 
 
     public float Playerhealth;
-
     float dom;
-
 	public float timeDelay = 300;
-
 	public Text win;
-
+    public GameObject deathObject;
     public Slider healthbar;
     public BossHealth boss;
+    private Animator animator; 
+
+    public AudioClip hit;
+    AudioSource audioSource;
 
     // Use this for initialization
     void Start () {
+        int alive = PlayerState.playersAlive;
+        Playerhealth += alive;
+        Debug.Log(Playerhealth);
         dom = Playerhealth;
         healthbar.value = healthLeft();
         BossHealth.deadPlayers = 0;
         boss = GameObject.Find("Boss").GetComponent<BossHealth>();
-	}
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("isDead", false);
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,12 +46,15 @@ public class PlayerHealth : MonoBehaviour {
         {
             print("hit");
             Playerhealth -= 1;
+            audioSource.Play();
             print(Playerhealth);
             if(Playerhealth <= 0)
             {
                 BossHealth.deadPlayers += 1;
                 healthbar.value = healthLeft();
+                StartCoroutine(death());
                 gameObject.SetActive(false);
+               
             }
         }
     }
@@ -53,16 +64,24 @@ public class PlayerHealth : MonoBehaviour {
         {
             print("hit");
             Playerhealth -= 1;
-            print(Playerhealth);
+            audioSource.Play();
             if (Playerhealth <= 0)
             {
                 BossHealth.deadPlayers += 1;
                 healthbar.value = healthLeft();
+                StartCoroutine(death());
                 gameObject.SetActive(false);
             }
         }
     }
+    IEnumerator death()
+    {
 
+         Instantiate(deathObject,
+                     new Vector3(transform.position.x, transform.position.y, transform.position.z)
+                     , Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z));
+        yield return new WaitForSeconds(1);
+    }
 
     float healthLeft()
     {
