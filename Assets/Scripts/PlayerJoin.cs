@@ -13,6 +13,7 @@ public class PlayerJoin : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        PlayerState.easterEgg = false;
         GlobalControl.NumPlayers = 0;
         playerBlockPrefab = Resources.Load<GameObject>("Prefabs/playerBlock");
         playerBlocks = new GameObject[5];
