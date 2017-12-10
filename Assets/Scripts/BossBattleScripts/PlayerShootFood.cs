@@ -31,13 +31,24 @@ public class PlayerShootFood : MonoBehaviour {
             if (!foods[i].activeInHierarchy)
             {
                 foods[i].transform.position = transform.position;
+                if(GetComponent<Rigidbody2D>().velocity.x < 0)
+                {
+                    foods[i].GetComponent<ShotMovement>().speed = -5f;
+                    foods[i].GetComponent<SpriteRenderer>().flipX = true;
+                    foods[i].GetComponent<SpriteRenderer>().flipY = true;
+                }
+                else
+                {
+                    foods[i].GetComponent<SpriteRenderer>().flipX = false;
+                    foods[i].GetComponent<SpriteRenderer>().flipX = false;
+                    foods[i].GetComponent<ShotMovement>().speed = 5f;
+                }
+                
                 foods[i].SetActive(true);
                 break;
             }
         }
     }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -53,9 +64,6 @@ public class PlayerShootFood : MonoBehaviour {
     {
         readyToShoot = true;
     }
-
-
-
     void OnCollisionEnter2D(Collision2D other)
     {
     }

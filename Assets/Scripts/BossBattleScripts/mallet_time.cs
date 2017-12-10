@@ -17,6 +17,7 @@ public class mallet_time : MonoBehaviour {
     public float cooldown;
     public Slider CDBAR;
     public float cvalue = 500f;
+    public bool canMove = false;
 
 
 
@@ -27,6 +28,7 @@ public class mallet_time : MonoBehaviour {
         ogSpot = transform.position;
         flip = false;
         CDBAR.value = cooldowntimer();
+        canMove = false;
     }
 
 
@@ -34,13 +36,12 @@ public class mallet_time : MonoBehaviour {
     {
         bool isDown = false;
 
-        if (smack == false && isDown == false)
+        if (smack == false && isDown == false && canMove == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(loc.x, transform.position.y, transform.position.z), s);
         }
-            else if(smack == true && isDown == false) 
+        else if (smack == true && isDown == false) 
             {
-        
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, gloc.y+(5/2), transform.position.z), s);
                 Debug.Log("go down");
                 if (transform.position.y == gloc.y + (5 / 2))
@@ -99,12 +100,23 @@ public class mallet_time : MonoBehaviour {
             }
         }
 
+        if(BossHealth.isBossTwoThirdsHealth == true)
+        {
+            canMove = true;
+        }
+
+        if (canMove == false)
+        {
+            cooldown = 0;
+            smash = false;
+        }
+
         CDBAR.value = cooldowntimer();
     }
 
     float cooldowntimer()
     {
-        return cooldown;
+        return cooldown / cvalue;
 
     }
 

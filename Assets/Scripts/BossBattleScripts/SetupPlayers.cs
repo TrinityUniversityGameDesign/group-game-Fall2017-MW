@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetupPlayers : MonoBehaviour {
-    public GameObject player;
+    public GameObject sausagePrefab;
+    public GameObject carrotPrefab;
+    public GameObject strawberryPrefab;
+    public GameObject applePrefab;
 
 
 	// Use this for initialization
@@ -20,8 +23,7 @@ public class SetupPlayers : MonoBehaviour {
             GameObject.Find("Meat-Mallet-icon").GetComponent<mallet_time>().num = 1;
             Boss.GetComponent<BossHealth>().numPlayers = 1;
 
-
-            GameObject ply = Instantiate(player);
+            GameObject ply = Instantiate(strawberryPrefab);
             ply.GetComponent<PlayerControlBossBattle>().num = 2;
             ply.GetComponent<PlayerShootFood>().playerNum = 2;
         }
@@ -37,7 +39,25 @@ public class SetupPlayers : MonoBehaviour {
                 Boss.GetComponent<BossHealth>().numPlayers = numPlayers -1;
             } else
             {
-                GameObject ply = Instantiate(player);
+                    GameObject ply;
+                    if (PlayerState.playerType[x] == PlayerType.SAUSAGE)
+                    {
+                        ply = Instantiate(sausagePrefab);
+                    }
+                    else if (PlayerState.playerType[x] == PlayerType.CARROT)
+                    {
+                        ply = Instantiate(carrotPrefab);
+                    }
+                    else if (PlayerState.playerType[x] == PlayerType.STRAWBERRY)
+                    {
+                        ply = Instantiate(strawberryPrefab);
+                    }
+                    else if (PlayerState.playerType[x] == PlayerType.APPLE)
+                    {
+                        ply = Instantiate(applePrefab);
+                    }
+                    else ply = Instantiate(sausagePrefab);
+
                 ply.GetComponent<PlayerControlBossBattle>().num = x;
                 ply.GetComponent<PlayerShootFood>().playerNum = x;
             }

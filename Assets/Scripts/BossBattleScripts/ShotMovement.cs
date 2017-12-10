@@ -13,11 +13,11 @@ public class ShotMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		theRigidBody.velocity = new Vector2(speed, theRigidBody.velocity.y);
+        theRigidBody.velocity = Vector3.right * speed;
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject && other.gameObject.layer == 11)
+        if (gameObject && other.gameObject.layer == 11 || gameObject && other.gameObject.layer == 0)
         {
             gameObject.SetActive(false);
         }

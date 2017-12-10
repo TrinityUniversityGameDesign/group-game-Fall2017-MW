@@ -8,7 +8,7 @@ public class BossHealth : MonoBehaviour
 {
     public Sprite healthImg;
     public int numPlayers;
-    public float Bosshealth = 100f;
+    public float Bosshealth;
     float dom;
     
 
@@ -19,6 +19,10 @@ public class BossHealth : MonoBehaviour
     public Slider healthbar;
     public static int deadPlayers = 0;
 
+    private float ogHealth;
+    public static bool isBossTwoThirdsHealth = false;
+    public static bool isBossOneThird = false;
+
     // Use this for initialization
     void Start()
     {
@@ -26,6 +30,7 @@ public class BossHealth : MonoBehaviour
         dom = Bosshealth;
         healthbar.value = healthLeft();
 		win.GetComponent<Text> ().enabled = false;
+        ogHealth = Bosshealth;
     }
 
     // Update is called once per frame
@@ -50,6 +55,18 @@ public class BossHealth : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
+        }
+
+        if(Bosshealth <= ogHealth * .66)
+        {
+            Debug.Log("True");
+            isBossTwoThirdsHealth = true;
+        }
+
+        if(Bosshealth <= ogHealth * .40)
+        {
+            Debug.Log("true");
+            isBossOneThird = true;
         }
 
     }
