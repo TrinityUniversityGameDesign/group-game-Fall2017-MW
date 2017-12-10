@@ -15,7 +15,7 @@ public class StickyObstacle : MonoBehaviour {
         transform.position = p.transform.position+new Vector3(0,0,-1);
         //player.mvSpeed = player.baseSpeed / 10;
         //StartCoroutine(player.ObstacleTimer(player.stun));
-        // player.source.PlayOneShot(player.stunEffect, 1);
+        player.source.PlayOneShot(player.stunEffect, 1);
         p.canMove = false;
     }
     // Use this for initialization
@@ -31,11 +31,11 @@ public class StickyObstacle : MonoBehaviour {
         if (p != null && !p.canMove)
         {
 			if (GlobalControl.GetButtonDownA (p.playerNum)) {
-				GetComponent<Animator> ().SetBool ("Apressed", true);
+				GetComponent<Animator> ().SetBool ("Apressed", false);
 
 				frozenCount--;
 			} else {
-				GetComponent<Animator> ().SetBool ("Apressed", false);
+				GetComponent<Animator> ().SetBool ("Apressed", true);
 			}
 				
             if (frozenCount <= 0)

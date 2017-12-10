@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerType { APPLE, CHEF, SAUSAGE, CARROT, STRAWBERRY };
+public enum PlayerType { APPLE, SAUSAGE, CARROT, STRAWBERRY, CHEF };
 
 public static class PlayerState {
 

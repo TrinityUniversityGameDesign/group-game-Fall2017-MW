@@ -32,16 +32,19 @@ public class ConveyorBossControl : MonoBehaviour {
 		if (PlayerState.playerType == null) {
 			GlobalControl.AddPlayer (1);
 			GlobalControl.AddPlayer (2);
+			PlayerState.playerType = new PlayerType[5] {PlayerType.APPLE,PlayerType.CHEF,PlayerType.APPLE,PlayerType.CARROT,PlayerType.SAUSAGE};
 		}
 		for (int i = 1; i <= GlobalControl.NumPlayers; i++) {
 			if (PlayerState.playerType != null && PlayerState.playerType [i] == PlayerType.CHEF) {
 				BossPNum = i;
 				Debug.Log ("Boss number is " + i);
 			} else {
-				
-				var player = Instantiate (playerFabs [pTcount]);
+
+				Debug.Log ((int)PlayerState.playerType [i]);
+				var player = Instantiate (playerFabs [(int)PlayerState.playerType [i]]);
                 pTcount++;
 				//playerbounds = OrthographicBounds(transform.parent.GetComponentInChildren<Camera> ());
+				//TODO: set player based on PlayerState
 				player.transform.position += new Vector3 (i, 0, 0);
 				player.GetComponent<ConveyerPlayerMovement> ().playerNum = i;
 				player.GetComponent<ConveyerPlayerMovement> ().bounds = ConveyerPlayerMovement.OrthographicBounds(camera);
@@ -81,7 +84,7 @@ public class ConveyorBossControl : MonoBehaviour {
 
 			currentObstacle.transform.position = transform.position;
             //Debug.Log ("Updating " + Input.GetButton ("X_P1"));
-			if (GlobalControl.GetButtonA(BossPNum))
+			if (GlobalControl.GetButtonA(BossPNum) || Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Pressed");
                 currentObstacle.GetComponent<Obstacle>().setActive(conveyor);
@@ -109,7 +112,7 @@ public class ConveyorBossControl : MonoBehaviour {
             if (text != null)
              text.text = "Time Left: " + Mathf.Round(i) + "    ";
             if (i % 10 == 0)
-                frameDelay = 3 * frameDelay / 4;
+                frameDelay = 7 * frameDelay / 8;
             yield return new WaitForSeconds(1);
         }
         ChangeScene("End_Screen");
